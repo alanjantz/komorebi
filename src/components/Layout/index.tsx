@@ -9,7 +9,8 @@ import {
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import { ThemeProvider } from '@material-ui/styles';
-import { createTheme } from '@material-ui/core/styles';
+import { theme } from './styles';
+import './Layout.css';
 
 export interface LayoutProps {
   pageTitle?: string;
@@ -18,20 +19,6 @@ export interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ pageTitle, children }) => {
   const [open, setOpen] = useState<boolean>(false);
   const anchor = 'left';
-
-  const theme = createTheme({
-    palette: {
-      primary: {
-        main: '#171e28',
-      },
-      secondary: {
-        main: '#f58d1e',
-      },
-      background: {
-        default: '#eff1f4',
-      },
-    },
-  });
 
   const toggleDrawer =
     (isOpen: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {

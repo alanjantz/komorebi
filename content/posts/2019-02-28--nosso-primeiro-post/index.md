@@ -1,11 +1,11 @@
 ---
-title: "Nosso primeiro post"
-date: "2019-02-28"
-description: "Illas semine campoque declivia oppida corpora nam inter fuit discordia tellus solidumque iunctarum erat: quae terrenae ubi rerum recessit"
+title: 'Nosso primeiro post'
+date: '2019-02-28'
+description: 'Illas semine campoque declivia oppida corpora nam inter fuit discordia tellus solidumque iunctarum erat: quae terrenae ubi rerum recessit'
 draft: false
-tags: 
-    - Blog
-    - Primeiro post
+tags:
+  - Blog
+  - Primeiro post
 ---
 
 Aqui vai todo o conteúdo do seu blog, e você pode editar e escrever da maneira que mais gostar. Agora, como todo site deve ter, bora colocar um lorem ipsum:

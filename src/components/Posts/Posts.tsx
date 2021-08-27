@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import './Posts.css';
 
 interface PostsModel {
   data: any;
