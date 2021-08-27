@@ -6,6 +6,7 @@ module.exports = {
     description: config.siteDescription,
     siteUrl: config.siteUrl,
   },
+  pathPrefix: config.pathPrefix,
   plugins: [
     'gatsby-plugin-catch-links',
     `gatsby-transformer-remark`,

@@ -4,8 +4,8 @@ import Posts from '../components/Posts';
 
 export default class Tag extends Component {
   render() {
-    const { data, pathContext } = this.props;
-    const { tag } = pathContext;
+    const { data, pageContext } = this.props;
+    const { tag } = pageContext;
     const { pathname } = this.props.location;
     return (
       <div>
