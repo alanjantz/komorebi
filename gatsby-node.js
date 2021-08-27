@@ -40,8 +40,8 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
-    const postTemplate = path.resolve('src/templates/post.jsx');
-    const tagTemplate = path.resolve('src/templates/tag.jsx');
+    const postTemplate = path.resolve('src/templates/post.tsx');
+    const tagTemplate = path.resolve('src/templates/tag.tsx');
     resolve(
       graphql(
         `
