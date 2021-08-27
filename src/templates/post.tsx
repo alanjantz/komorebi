@@ -1,7 +1,7 @@
 import React from 'react';
 import { PageProps, graphql, Link } from 'gatsby';
 import _ from 'lodash';
-import { Layout } from '../components';
+import { Container, Layout } from '../components';
 
 const PostTemplate: React.FC<PageProps> = (props) => {
   const { data } = props;
@@ -12,22 +12,25 @@ const PostTemplate: React.FC<PageProps> = (props) => {
 
   return (
     <Layout>
-      <h2 style={{ fontSize: '22px', fontWeight: 'bold' }}>{title}</h2>
-      <p>
-        {tags.map((tag) => (
-          <Link
-            style={{ color: '#000', marginRight: '10px' }}
-            key={tag}
-            to={`/tag/${_.kebabCase(tag)}`}
-          >
-            {tag}
-          </Link>
-        ))}
-      </p>
-      <p>{date}</p>
-      <div className="content">
-        <p dangerouslySetInnerHTML={{ __html: html }} />
-      </div>
+      <Container>
+        <h2 style={{ fontSize: '22px', fontWeight: 'bold' }}>{title}</h2>
+        <p>
+          {tags.map((tag) => (
+            <Link
+              style={{ color: '#000', marginRight: '10px' }}
+              key={tag}
+              to={`/tag/${_.kebabCase(tag)}`}
+            >
+              {tag}
+            </Link>
+          ))}
+        </p>
+        <p>{date}</p>
+        <div className="content">
+          {/* eslint-disable-next-line react/no-danger */}
+          <p dangerouslySetInnerHTML={{ __html: html }} />
+        </div>
+      </Container>
     </Layout>
   );
 };
