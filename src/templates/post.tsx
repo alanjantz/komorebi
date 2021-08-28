@@ -1,35 +1,27 @@
 import React from 'react';
-import { PageProps, graphql, Link } from 'gatsby';
-import _ from 'lodash';
-import { Container, Layout } from '../components';
+import { PageProps, graphql } from 'gatsby';
+import { Container, Layout, Post } from '../components';
+import { PostModel, SeasonModel } from '../models';
 
 const PostTemplate: React.FC<PageProps> = (props) => {
   const { data } = props;
   const { fields } = data.markdownRemark;
   const { slug } = fields;
-  const { title, tags, date, description } = data.markdownRemark.frontmatter;
-  const { html } = data.markdownRemark;
+  const { title, subtitle, tags, seasons, description } =
+    data.markdownRemark.frontmatter;
+
+  const post: PostModel = {
+    title,
+    subtitle,
+    synopsis: description,
+    seasons: JSON.parse(seasons.toString()) as SeasonModel[],
+    tags: tags as Array<string>,
+  };
 
   return (
     <Layout>
       <Container>
-        <h2 style={{ fontSize: '22px', fontWeight: 'bold' }}>{title}</h2>
-        <p>
-          {tags.map((tag) => (
-            <Link
-              style={{ color: '#000', marginRight: '10px' }}
-              key={tag}
-              to={`/tag/${_.kebabCase(tag)}`}
-            >
-              {tag}
-            </Link>
-          ))}
-        </p>
-        <p>{date}</p>
-        <div className="content">
-          {/* eslint-disable-next-line react/no-danger */}
-          <p dangerouslySetInnerHTML={{ __html: html }} />
-        </div>
+        <Post post={post} />
       </Container>
     </Layout>
   );
@@ -45,8 +37,9 @@ export const pageQuery = graphql`
       excerpt
       frontmatter {
         title
-        date(formatString: "DD/MM/YYYY")
+        subtitle
         tags
+        seasons
         description
       }
       fields {

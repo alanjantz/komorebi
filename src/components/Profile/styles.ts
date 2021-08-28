@@ -1,5 +1,6 @@
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import styled from 'styled-components';
+import { theme } from '../Layout/styles';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -19,13 +20,15 @@ export const Container = styled.div`
 export const Background = styled.div`
   width: 100%;
   height: 64px;
-  background: red;
+  background: ${theme.palette.primary.main};
 `;
 
 export const Icon = styled.div`
   width: 100px;
   height: 100px;
-  background: blue;
+  background: url('https://i.imgur.com/gKCy0rO.jpg');
+  background-size: cover;
+  border: 5px solid white;
   -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
   border-radius: 50px;

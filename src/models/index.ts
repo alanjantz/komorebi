@@ -1,3 +1,3 @@
-import { PostModel } from './PostModel';
+import { PostModel, SeasonModel } from './PostModel';
 
-export type { PostModel };
+export type { PostModel, SeasonModel };
