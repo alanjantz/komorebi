@@ -15,7 +15,13 @@ export const useStyles = makeStyles((theme: Theme) =>
 
 export const ListItem = styled.div`
   .MuiImageListItem-item {
+    width: 300px;
     height: 450px;
+
+    @media only screen and (max-width: 650px) {
+      width: 200px;
+      height: 300px;
+    }
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
