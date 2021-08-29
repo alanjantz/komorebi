@@ -6,6 +6,7 @@ description: "A história gira em torno de Yuri Katsuki, que carregou todas as e
 tags:
   - Esporte
   - Boys Love
+cover: "https://i.imgur.com/P6XfkOB.png"  
 seasons: "[
   {
     \"year\": 2016,

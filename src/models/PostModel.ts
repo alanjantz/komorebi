@@ -4,6 +4,7 @@ export interface PostModel {
   synopsis: string;
   tags: string[];
   seasons: SeasonModel[];
+  cover: string;
 }
 
 export interface SeasonModel {

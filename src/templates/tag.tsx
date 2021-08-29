@@ -33,8 +33,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
-            date(formatString: "DD/MM/YYYY")
-            description
+            cover
           }
         }
       }

@@ -41,6 +41,7 @@ export const pageQuery = graphql`
         tags
         seasons
         description
+        cover
       }
       fields {
         slug

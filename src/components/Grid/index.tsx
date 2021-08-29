@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import MaterialGrid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 import { useStyles } from './styles';
+import Cover from '../Cover';
 
 interface GridProps {
   data?: any;
@@ -25,11 +25,11 @@ const Grid: React.FC<GridProps> = ({ data }) => {
           const post = edge.node.frontmatter;
 
           return (
-            <Link to={edge.node.fields.slug}>
-              <MaterialGrid item>
-                <Paper>{post.title}</Paper>
-              </MaterialGrid>
-            </Link>
+            <MaterialGrid item>
+              <Link to={edge.node.fields.slug}>
+                <Cover title={post.title} source={post.cover} />
+              </Link>
+            </MaterialGrid>
           );
         })}
       </MaterialGrid>
