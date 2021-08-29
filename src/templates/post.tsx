@@ -7,7 +7,7 @@ const PostTemplate: React.FC<PageProps> = (props) => {
   const { data } = props;
   const { fields } = data.markdownRemark;
   const { slug } = fields;
-  const { title, subtitle, tags, seasons, description } =
+  const { title, subtitle, tags, seasons, description, cover } =
     data.markdownRemark.frontmatter;
 
   const post: PostModel = {
@@ -16,6 +16,7 @@ const PostTemplate: React.FC<PageProps> = (props) => {
     synopsis: description,
     seasons: JSON.parse(seasons.toString()) as SeasonModel[],
     tags: tags as Array<string>,
+    cover,
   };
 
   return (
