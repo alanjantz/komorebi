@@ -1,7 +1,8 @@
 import { createTheme } from '@material-ui/core/styles';
+
 const font = "'Roboto', sans-serif";
 
-const theme = createTheme({
+export const theme = createTheme({
   palette: {
     primary: {
       main: '#171e28',
@@ -17,5 +18,3 @@ const theme = createTheme({
     fontFamily: font,
   },
 });
-
-export { theme };

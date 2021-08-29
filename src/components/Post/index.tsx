@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Table,
   TableBody,
-  TableCell,
   TableContainer,
   TableHead,
   TableRow,
@@ -10,7 +9,7 @@ import {
 import { Link } from 'gatsby';
 import _ from 'lodash';
 import { PostModel } from '../../models';
-import { Paper } from './styles';
+import { Paper, StyledTableRow, StyledTableCell, TableCell } from './styles';
 
 interface PostProps {
   post: PostModel;
@@ -66,19 +65,19 @@ const Post: React.FC<PostProps> = ({ post }) => {
             <Table key={season.year}>
               <TableHead>
                 <TableRow>
-                  <TableCell>{episodes.length}</TableCell>
-                  <TableCell>{season.title}</TableCell>
-                  <TableCell align="right">{season.year}</TableCell>
+                  <StyledTableCell>{episodes.length}</StyledTableCell>
+                  <StyledTableCell>{season.title}</StyledTableCell>
+                  <StyledTableCell align="right">{season.year}</StyledTableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
                 {episodes.map((epTitle, index) => {
                   const key = index + 1;
                   return (
-                    <TableRow key={key}>
+                    <StyledTableRow key={key}>
                       <TableCell>{formatNumber(key, numberOfZeros)}</TableCell>
                       <TableCell colSpan={2}>{epTitle}</TableCell>
-                    </TableRow>
+                    </StyledTableRow>
                   );
                 })}
               </TableBody>

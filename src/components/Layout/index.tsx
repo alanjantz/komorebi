@@ -28,3 +28,5 @@ const Layout: React.FC<LayoutProps> = ({ pageTitle, children }) => {
 };
 
 export default Layout;
+
+export { theme };
