@@ -19,9 +19,9 @@ seasons: "[
       \"Curta você mesmo ... e complete o programa gratuito !!\",
       \"Face Beet-Red !! É a primeira competição! Campeonato de Chugoku, Shikoku e Kyushu\",
       \"China's On! Evento de abertura do Grand Prix Series !! Programa Curto da Copa da China\",
-      \"China's On! Evento de abertura do Grand Prix Series !! Cup of China Free Skate\",
+      \"China's On! Evento de abertura do Grand Prix Series !! Porgrama Free Skate da Copa da China\",
       \"Yuri vs Yuri! O Horror !! Copa Rostelecom, Programa Curto\",
-      \"Yuri vs Yuri! O Horror !! Taça Rostelecom, Skate Grátis\",
+      \"Yuri vs Yuri! O Horror !! Taça Rostelecom, Free Skate\",
       \"Tenho que supercharge! Final Pré-Grande Prêmio Especial!\",
       \"Super-Supercharge! Programa Curto Final do Grande Prêmio\",
       \"Super-Super-Supercharge! Grande Prêmio Final Free Skate\"
