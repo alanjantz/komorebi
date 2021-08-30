@@ -3,9 +3,9 @@ const config = {
   siteDescription: 'Animes blog',
   siteTitleShort: 'alanjantz.dev/komorebi',
   siteRss: '/rss.xml',
-  googleAnalyticsID: 'UA-136490553-1',
-  themeColor: '#00E2BC',
-  backgroundColor: '#FFFFFF',
+  googleAnalyticsID: 'UA-47910107-1',
+  themeColor: '#171e28',
+  backgroundColor: '#ffffff',
   siteUrl: 'https://alanjantz.github.io/komorebi',
   pathPrefix: 'komorebi',
 };
