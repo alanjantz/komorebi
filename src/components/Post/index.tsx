@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import {
-  Button,
   Card,
   CardActions,
   CardContent,
   CardMedia,
+  IconButton,
   Slide,
   Snackbar,
   TableContainer,
@@ -63,9 +63,13 @@ const Post: React.FC<PostProps> = ({ post }) => {
           </TableContainer>
         </CardContent>
         <CardActions className={classes.actions}>
-          <Button startIcon={<ShareIcon />} onClick={copy}>
-            Compartilhar
-          </Button>
+          <IconButton
+            aria-label="compartilhar"
+            onClick={copy}
+            color="secondary"
+          >
+            <ShareIcon fontSize="small" />
+          </IconButton>
         </CardActions>
       </Card>
       <Snackbar
