@@ -1,15 +1,28 @@
 import React from 'react';
 import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Chip,
   Table,
   TableBody,
   TableContainer,
   TableHead,
   TableRow,
+  Typography,
 } from '@material-ui/core';
 import { Link } from 'gatsby';
 import _ from 'lodash';
+import ShareIcon from '@material-ui/icons/Share';
 import { PostModel } from '../../models';
-import { Paper, StyledTableRow, StyledTableCell, TableCell } from './styles';
+import {
+  StyledTableRow,
+  StyledTableCell,
+  TableCell,
+  useStyles,
+} from './styles';
 
 interface PostProps {
   post: PostModel;
@@ -17,6 +30,7 @@ interface PostProps {
 
 const Post: React.FC<PostProps> = ({ post }) => {
   const { title, subtitle, tags, synopsis, seasons } = post;
+  const classes = useStyles();
 
   const formatNumber = (value: number, padding: number): string =>
     value.toString().padStart(padding, '0');
@@ -30,7 +44,7 @@ const Post: React.FC<PostProps> = ({ post }) => {
       result = new Array(seasonEpisodes)
         .fill(undefined)
         .map(
-          (_, index) => `Episódio ${formatNumber(index + 1, numberOfZeros)}`,
+          (ep, index) => `Episódio ${formatNumber(index + 1, numberOfZeros)}`,
         );
     } else {
       result = seasonEpisodes as Array<string>;
@@ -40,52 +54,79 @@ const Post: React.FC<PostProps> = ({ post }) => {
   };
 
   return (
-    <Paper>
-      <h1>{title}</h1>
-      <h4>{subtitle}</h4>
-      <p>
-        {tags.map((tag) => (
-          <Link
-            style={{ color: '#000', marginRight: '10px' }}
-            key={tag}
-            to={`/tag/${_.kebabCase(tag)}`}
-          >
-            {tag}
-          </Link>
-        ))}
-      </p>
-      <p>{synopsis}</p>
+    <Card className={classes.root}>
+      {post.cover && (
+        <CardMedia
+          className={classes.media}
+          image={post.cover}
+          title="Contemplative Reptile"
+        />
+      )}
+      <CardContent>
+        <Typography variant="h5" component="h2">
+          {title}
+        </Typography>
+        {subtitle && (
+          <Typography className={classes.pos} color="textSecondary">
+            {subtitle}
+          </Typography>
+        )}
+        <p>
+          {tags.map((tag) => (
+            <Link
+              key={tag}
+              to={`/tag/${_.kebabCase(tag)}`}
+              className={classes.margin}
+            >
+              <Chip
+                size="small"
+                label={tag}
+                color="primary"
+                onClick={() => {}}
+              />
+            </Link>
+          ))}
+        </p>
+        <p>{synopsis}</p>
 
-      <TableContainer>
-        {seasons.map((season) => {
-          const episodes = getEpisodesList(season.episodes);
-          const numberOfZeros = episodes.length.toString().length;
+        <TableContainer>
+          {seasons.map((season) => {
+            const episodes = getEpisodesList(season.episodes);
+            const numberOfZeros = episodes.length.toString().length;
 
-          return (
-            <Table key={season.year}>
-              <TableHead>
-                <TableRow>
-                  <StyledTableCell>{episodes.length}</StyledTableCell>
-                  <StyledTableCell>{season.title}</StyledTableCell>
-                  <StyledTableCell align="right">{season.year}</StyledTableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {episodes.map((epTitle, index) => {
-                  const key = index + 1;
-                  return (
-                    <StyledTableRow key={key}>
-                      <TableCell>{formatNumber(key, numberOfZeros)}</TableCell>
-                      <TableCell colSpan={2}>{epTitle}</TableCell>
-                    </StyledTableRow>
-                  );
-                })}
-              </TableBody>
-            </Table>
-          );
-        })}
-      </TableContainer>
-    </Paper>
+            return (
+              <Table key={season.year}>
+                <TableHead>
+                  <TableRow>
+                    <StyledTableCell>{episodes.length}</StyledTableCell>
+                    <StyledTableCell>{season.title}</StyledTableCell>
+                    <StyledTableCell align="right">
+                      {season.year}
+                    </StyledTableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {episodes.map((epTitle, index) => {
+                    const key = index + 1;
+                    return (
+                      <StyledTableRow key={key}>
+                        <TableCell>
+                          {formatNumber(key, numberOfZeros)}
+                        </TableCell>
+                        <TableCell colSpan={2}>{epTitle}</TableCell>
+                      </StyledTableRow>
+                    );
+                  })}
+                </TableBody>
+              </Table>
+            );
+          })}
+        </TableContainer>
+      </CardContent>
+      <CardActions className={classes.actions}>
+        <Button startIcon={<ShareIcon />}>Compartilhar</Button>
+      </CardActions>
+    </Card>
   );
 };
 

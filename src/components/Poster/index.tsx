@@ -3,12 +3,12 @@ import ImageListItem from '@material-ui/core/ImageListItem';
 import ImageListItemBar from '@material-ui/core/ImageListItemBar';
 import { useStyles, ListItem } from './styles';
 
-interface CoverProps {
+interface PosterProps {
   title: string;
   source: string;
 }
 
-const Cover: React.FC<CoverProps> = ({ title, source }) => {
+const Poster: React.FC<PosterProps> = ({ title, source }) => {
   const classes = useStyles();
 
   return (
@@ -25,4 +25,4 @@ const Cover: React.FC<CoverProps> = ({ title, source }) => {
   );
 };
 
-export default Cover;
+export default Poster;

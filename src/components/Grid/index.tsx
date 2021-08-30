@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import MaterialGrid from '@material-ui/core/Grid';
 import { useStyles } from './styles';
-import Cover from '../Cover';
+import Poster from '../Poster';
 
 interface GridProps {
   data?: any;
@@ -27,7 +27,7 @@ const Grid: React.FC<GridProps> = ({ data }) => {
           return (
             <MaterialGrid item>
               <Link to={edge.node.fields.slug}>
-                <Cover title={post.title} source={post.cover} />
+                <Poster title={post.title} source={post.poster} />
               </Link>
             </MaterialGrid>
           );

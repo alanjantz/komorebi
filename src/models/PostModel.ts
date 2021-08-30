@@ -4,6 +4,7 @@ export interface PostModel {
   synopsis: string;
   tags: string[];
   seasons: SeasonModel[];
+  poster: string;
   cover: string;
 }
 

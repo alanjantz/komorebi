@@ -1,17 +1,10 @@
-import styled from 'styled-components';
-import MaterialPaper from '@material-ui/core/Paper';
 import { createStyles, withStyles } from '@material-ui/styles';
-import { TableCell as MaterialTableCell, TableRow } from '@material-ui/core';
-import { theme } from '../Layout/styles';
-
-export const Paper = styled(MaterialPaper)`
-  margin: 15px 0;
-  padding: 15px;
-
-  @media only screen and (max-width: 1000px) {
-    margin: 15px;
-  }
-`;
+import {
+  makeStyles,
+  TableCell as MaterialTableCell,
+  TableRow,
+} from '@material-ui/core';
+import { theme } from '../Layout';
 
 export const TableCell = withStyles(() =>
   createStyles({
@@ -45,3 +38,23 @@ export const StyledTableRow = withStyles(() =>
     },
   }),
 )(TableRow);
+
+export const useStyles = makeStyles(() =>
+  createStyles({
+    margin: {
+      marginRight: theme.spacing(1),
+    },
+    root: {
+      margin: 15,
+    },
+    media: {
+      height: 250,
+    },
+    actions: {
+      float: 'right',
+    },
+    pos: {
+      marginBottom: 12,
+    },
+  }),
+);
