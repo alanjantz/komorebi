@@ -58,9 +58,7 @@ const Post: React.FC<PostProps> = ({ post }) => {
 
           <TableContainer>
             {seasons.map((season) => (
-              <React.Fragment key={season}>
-                <Season season={season} />
-              </React.Fragment>
+              <Season key={season.year} season={season} />
             ))}
           </TableContainer>
         </CardContent>
