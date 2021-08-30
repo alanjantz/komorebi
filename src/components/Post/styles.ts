@@ -22,6 +22,7 @@ export const StyledTableCell = withStyles(() =>
     head: {
       backgroundColor: theme.palette.primary.main,
       color: theme.palette.common.white,
+      fontWeight: 700,
     },
     body: {
       fontSize: 14,
@@ -55,6 +56,10 @@ export const useStyles = makeStyles(() =>
     },
     actions: {
       float: 'right',
+    },
+    firstColumn: {
+      width: 40,
+      textAlign: 'center',
     },
   }),
 );

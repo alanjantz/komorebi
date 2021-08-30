@@ -1,19 +1,20 @@
 import React from 'react';
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableRow,
-} from '@material-ui/core';
+import { Table, TableBody, TableHead, TableRow } from '@material-ui/core';
 import { SeasonModel } from '@/models';
-import { StyledTableCell, StyledTableRow } from './styles';
+import {
+  StyledTableCell,
+  StyledTableRow,
+  TableCell,
+  useStyles,
+} from './styles';
 
 interface SeasonProps {
   season: SeasonModel;
 }
 
 const Season: React.FC<SeasonProps> = ({ season }) => {
+  const classes = useStyles();
+
   const formatNumber = (value: number, padding: number): string =>
     value.toString().padStart(padding, '0');
 
@@ -42,7 +43,9 @@ const Season: React.FC<SeasonProps> = ({ season }) => {
     <Table>
       <TableHead>
         <TableRow>
-          <StyledTableCell>{episodes.length}</StyledTableCell>
+          <StyledTableCell className={classes.firstColumn}>
+            {episodes.length}
+          </StyledTableCell>
           <StyledTableCell>{season.title}</StyledTableCell>
           <StyledTableCell align="right">{season.year}</StyledTableCell>
         </TableRow>
@@ -52,7 +55,9 @@ const Season: React.FC<SeasonProps> = ({ season }) => {
           const key = index + 1;
           return (
             <StyledTableRow key={key}>
-              <TableCell>{formatNumber(key, numberOfZeros)}</TableCell>
+              <TableCell className={classes.firstColumn}>
+                {formatNumber(key, numberOfZeros)}
+              </TableCell>
               <TableCell colSpan={2}>{epTitle}</TableCell>
             </StyledTableRow>
           );
