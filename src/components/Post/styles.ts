@@ -1,3 +1,4 @@
+import styled from 'styled-components';
 import { createStyles, withStyles } from '@material-ui/styles';
 import {
   makeStyles,
@@ -11,6 +12,8 @@ export const TableCell = withStyles(() =>
     root: {
       padding: 10,
     },
+    head: {},
+    body: {},
   }),
 )(MaterialTableCell);
 
@@ -41,20 +44,21 @@ export const StyledTableRow = withStyles(() =>
 
 export const useStyles = makeStyles(() =>
   createStyles({
-    margin: {
-      marginRight: theme.spacing(1),
-    },
     root: {
       margin: 15,
     },
     media: {
       height: 250,
     },
+    subtitle: {
+      marginBottom: 12,
+    },
     actions: {
       float: 'right',
     },
-    pos: {
-      marginBottom: 12,
-    },
   }),
 );
+
+export const Container = styled.div`
+  margin: 10px 0;
+`;
