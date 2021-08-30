@@ -14,7 +14,7 @@ import { PostModel } from '../../models';
 import Title from './Title';
 import Subtitle from './Subtitle';
 import TagGroup from './TagGroup';
-import { useStyles } from './styles';
+import { useStyles, Tooltip } from './styles';
 import Season from './Season';
 
 interface PostProps {
@@ -63,13 +63,15 @@ const Post: React.FC<PostProps> = ({ post }) => {
           </TableContainer>
         </CardContent>
         <CardActions className={classes.actions}>
-          <IconButton
-            aria-label="compartilhar"
-            onClick={copy}
-            color="secondary"
-          >
-            <ShareIcon fontSize="small" />
-          </IconButton>
+          <Tooltip title="Compartilhar" arrow>
+            <IconButton
+              aria-label="compartilhar"
+              onClick={copy}
+              color="secondary"
+            >
+              <ShareIcon fontSize="small" />
+            </IconButton>
+          </Tooltip>
         </CardActions>
       </Card>
       <Snackbar
