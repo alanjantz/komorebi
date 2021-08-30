@@ -19,8 +19,8 @@ export const ListItem = styled.div`
     height: 450px;
 
     @media only screen and (max-width: 650px) {
-      width: 200px;
-      height: 300px;
+      width: 160px;
+      height: 240px;
     }
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
