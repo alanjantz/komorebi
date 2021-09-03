@@ -15,5 +15,7 @@ jobs:
       - name: Deploy
         uses: xmflsct/action-publish-gatsby@v1.0.0
         with:
-          publishBranch: 'main'
+          publishBranch: 'gh-pages'
           token: ${{ secrets.TOKEN }}
+          name: 'Alan Jantz'
+          email: 'alan_f_jantz@hotmail.com'
