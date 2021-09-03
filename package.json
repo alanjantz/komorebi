@@ -12,14 +12,14 @@
   ],
   "scripts": {
     "start": "gatsby develop",
-    "build": "gatsby build",
+    "build": "gatsby build --prefix-paths",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "type-check": "tsc",
     "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\"",
     "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write",
     "test": "jest",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+    "deploy": "gh-pages -d public -b gh-pages -r 'https://${{ secrets.TOKEN }}@github.com/komorebi.git'"
   },
   "lint-staged": {
     "./src/**/*.{ts,js,jsx,tsx}": [
