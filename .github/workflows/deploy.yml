@@ -15,7 +15,7 @@ jobs:
       - name: Config
         run: |
           git config --global user.email "alan_f_jantz@hotmail.com"
-          git config --global user.name "alanjantz"
+          git config --global user.name "Alan Jantz"
           yarn global add gatsby-cli
           gatsby telemetry --disable
 
@@ -29,4 +29,4 @@ jobs:
         run: yarn build
 
       - name: Deploy
-        run: yarn deploy
+        run: yarn run gh-pages -d public -b gh-pages-u 'Alan Jantz <alan_f_jantz@hotmail.com>' -r 'https://${{ secrets.TOKEN }}@github.com/komorebi.git' -m 'Deploy Gatsby Pages'
