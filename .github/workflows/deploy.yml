@@ -18,7 +18,7 @@ jobs:
           git config --global user.email "alan_f_jantz@hotmail.com"
           git config --global user.name "Alan Jantz"
           git config user.password ${{ secrets.GITHUB_TOKEN }}
-          echo "git config"
+          echo "install gatsby-cli"
           yarn global add gatsby-cli
           gatsby telemetry --disable
           
