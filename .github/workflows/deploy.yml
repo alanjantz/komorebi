@@ -12,13 +12,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Config
+      - name: Config git
         run: |
-          echo "git config"
           git config --global user.email "alan_f_jantz@hotmail.com"
           git config --global user.name "Alan Jantz"
           git config user.password ${{ secrets.GITHUB_TOKEN }}
-          echo "install gatsby-cli"
+          git remote set-url origin git@github.com:alanjantz/komorebi.git
+          
+      - name: Config gatsby
+        run: |
           yarn global add gatsby-cli
           gatsby telemetry --disable
           
