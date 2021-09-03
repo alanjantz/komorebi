@@ -16,6 +16,8 @@ jobs:
         run : |
           git config --global user.email "alan_f_jantz@hotmail.com"
           git config --global user.name "alanjantz"
+          yarn global add gatsby-cli
+          gatsby telemetry --disable
         
       - name: Install
         run: yarn
