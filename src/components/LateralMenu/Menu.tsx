@@ -43,7 +43,7 @@ const Menu: React.FC = () => {
       </ListItem>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
-          {tags.map((tag) => {
+          {tags.sort().map((tag) => {
             const tagPath = (baseUrl ? `/${baseUrl}` : '') + getTagPath(tag);
 
             return (

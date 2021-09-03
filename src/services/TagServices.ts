@@ -1,8 +1,8 @@
 import _ from 'lodash';
 
 export const tags: string[] = [
-  'Ação',
   'Aventura',
+  'Ação',
   'Boys Love',
   'Comédia',
   'Cyberpunk',
