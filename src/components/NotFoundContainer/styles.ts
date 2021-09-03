@@ -19,7 +19,7 @@ export const useStyles = makeStyles(
         textAlign: 'center',
       },
       container: {
-        margin: theme.spacing(5),
+        marginTop: theme.spacing(5),
       },
       title: {
         marginBottom: theme.spacing(2),
