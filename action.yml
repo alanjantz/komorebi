@@ -1,0 +1,14 @@
+name: 'Build and Deploy'
+description: 'Build application and deploys it'
+inputs:
+  token:
+    description: 'Personal Access Token in order to publish to GitHub Pages.'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - 'gh-pages'
+    - ${{ inputs.token }}
+    - 'Alan Jantz'
+    - 'alan_f_jantz@hotmail.com'
