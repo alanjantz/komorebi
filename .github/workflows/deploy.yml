@@ -11,11 +11,17 @@ jobs:
     steps:      
       - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Deploy
-        uses: xmflsct/action-publish-gatsby@v1.0.0
-        with:
-          publishBranch: 'gh-pages'
-          token: ${{ secrets.TOKEN }}
-          name: 'Alan Jantz'
-          email: 'alan_f_jantz@hotmail.com'
+        
+      - name: Config
+        run : |
+          git config --global user.email "alan_f_jantz@hotmail.com"
+          git config --global user.name "alanjantz"
+        
+      - name: Install
+        run: yarn
+        
+      - name: Build and Deploy
+        run: |
+          gatsby build --prefix-paths
+          gh-pages -d public -b gh-pages -r 'https://${{ GITHUB_TOKEN }}@github.com/${{ GITHUB_REPOSITORY }}.git'
+          
