@@ -43,15 +43,15 @@ const Menu: React.FC = () => {
       </ListItem>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
-          {tags.map((tag) => (
-            <ListItemLink
-              href={getTagPath(tag)}
-              className={classes.nested}
-              key={tag}
-            >
-              <ListItemText primary={tag} />
-            </ListItemLink>
-          ))}
+          {tags.map((tag) => {
+            const tagPath = baseUrl + getTagPath(tag);
+
+            return (
+              <ListItemLink href={tagPath} className={classes.nested} key={tag}>
+                <ListItemText primary={tag} />
+              </ListItemLink>
+            );
+          })}
         </List>
       </Collapse>
     </List>
