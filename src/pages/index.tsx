@@ -8,7 +8,7 @@ const Home: React.FC<PageProps> = (props) => {
   return (
     <main>
       <Layout>
-        <Grid data={data} />
+        <Grid data={data} serchable />
       </Layout>
     </main>
   );
