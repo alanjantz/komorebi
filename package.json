@@ -19,7 +19,7 @@
     "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\"",
     "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write",
     "test": "jest",
-    "deploy": "gh-pages -d public -b gh-pages -r 'https://${{ secrets.TOKEN }}@github.com/komorebi.git'"
+    "deploy": "gh-pages -d public -b gh-pages"
   },
   "lint-staged": {
     "./src/**/*.{ts,js,jsx,tsx}": [
