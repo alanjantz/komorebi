@@ -17,7 +17,7 @@ const Tag: React.FC<TagProps> = ({ text, size }) => {
   };
 
   return (
-    <Link key={text} to={`/${getTagPath(text)}`}>
+    <Link key={text} to={getTagPath(text, '/')}>
       <Chip
         size={size}
         label={text}
