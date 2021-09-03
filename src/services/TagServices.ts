@@ -38,5 +38,4 @@ export const tags: string[] = [
   'Zumbi',
 ];
 
-export const getTagPath = (tag: string, baseUrl?: string): string =>
-  `${baseUrl}tag/${_.kebabCase(tag)}`;
+export const getTagPath = (tag: string): string => `/tag/${_.kebabCase(tag)}`;
