@@ -31,10 +31,6 @@ jobs:
         run: yarn test
 
       - name: Deploy
-        using: 'docker'
-        image: 'Dockerfile'
-        args:
-          - 'gh-pages'
-          - ${{ secrets.TOKEN }}
-          - 'Alan Jantz'
-          - 'alan_f_jantz@hotmail.com'
+        uses: ./
+        with:
+          token: ${{ secrets.TOKEN }}
