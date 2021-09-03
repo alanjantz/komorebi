@@ -1,6 +1,6 @@
 import { makeStyles, createStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles(() =>
+export const useStyles = makeStyles(() =>
   createStyles({
     root: {
       flexGrow: 1,
@@ -8,5 +8,3 @@ const useStyles = makeStyles(() =>
     },
   }),
 );
-
-export { useStyles };

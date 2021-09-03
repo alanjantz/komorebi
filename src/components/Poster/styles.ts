@@ -1,7 +1,7 @@
 import { createStyles, makeStyles } from '@material-ui/core';
 import styled from 'styled-components';
 
-export const useStyles = makeStyles((theme: Theme) =>
+export const useStyles = makeStyles(() =>
   createStyles({
     title: {
       color: 'white',
