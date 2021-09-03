@@ -1,4 +1,4 @@
-name: GitHub Pages Deploy
+name: Application Build
 
 on:
   push:
@@ -17,6 +17,6 @@ jobs:
 
       - name: Build
         run: yarn build
-        
+
       - name: Run tests
         run: yarn test
