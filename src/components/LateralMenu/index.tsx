@@ -1,6 +1,7 @@
 import React from 'react';
 import { SwipeableDrawer } from '@material-ui/core';
 import Profile from '../Profile';
+import Menu from './Menu';
 
 interface LateralMenuProps {
   open: boolean;
@@ -15,6 +16,7 @@ const LateralMenu: React.FC<LateralMenuProps> = ({ open, toggleDrawer }) => (
     onOpen={() => toggleDrawer(true)}
   >
     <Profile />
+    <Menu />
   </SwipeableDrawer>
 );
 

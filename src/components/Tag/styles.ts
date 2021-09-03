@@ -5,6 +5,7 @@ export const useStyles = makeStyles(() =>
   createStyles({
     margin: {
       marginRight: theme.spacing(1),
+      marginBottom: theme.spacing(1),
     },
   }),
 );

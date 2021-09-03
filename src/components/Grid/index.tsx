@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import MaterialGrid from '@material-ui/core/Grid';
 import { useStyles } from './styles';
 import Poster from '../Poster';
+import { Tooltip } from '../Post/styles';
 
 interface GridProps {
   data?: any;
@@ -23,13 +24,16 @@ const Grid: React.FC<GridProps> = ({ data }) => {
       >
         {edges.map((edge) => {
           const post = edge.node.frontmatter;
+          const postLink = edge.node.fields.slug;
 
           return (
-            <MaterialGrid item>
-              <Link to={edge.node.fields.slug}>
-                <Poster title={post.title} source={post.poster} />
-              </Link>
-            </MaterialGrid>
+            <Tooltip title={post.title} placement="bottom" key={postLink} arrow>
+              <MaterialGrid item>
+                <Link to={postLink}>
+                  <Poster title={post.title} source={post.poster} />
+                </Link>
+              </MaterialGrid>
+            </Tooltip>
           );
         })}
       </MaterialGrid>

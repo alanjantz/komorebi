@@ -1,16 +1,5 @@
-import { createStyles, makeStyles } from '@material-ui/core/styles';
 import styled from 'styled-components';
 import { theme } from '../Layout';
-
-const useStyles = makeStyles(() =>
-  createStyles({
-    nested: {
-      paddingLeft: theme.spacing(9),
-    },
-  }),
-);
-
-export { useStyles };
 
 export const Container = styled.div`
   width: 350px;

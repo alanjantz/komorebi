@@ -66,7 +66,7 @@ export const useStyles = makeStyles(() =>
 );
 
 export const Container = styled.div`
-  margin: 10px 0;
+  margin-top: 10px;
 `;
 
 export const Tooltip = withStyles(() => ({

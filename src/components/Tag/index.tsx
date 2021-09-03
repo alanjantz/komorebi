@@ -1,8 +1,8 @@
 import React from 'react';
-import _ from 'lodash';
 import { Link } from 'gatsby';
 import Chip from '@material-ui/core/Chip';
 import { useStyles } from './styles';
+import { getTagPath } from '@/services/TagServices';
 
 interface TagProps {
   text: string;
@@ -17,12 +17,14 @@ const Tag: React.FC<TagProps> = ({ text, size }) => {
   };
 
   return (
-    <Link
-      key={text}
-      to={`/tag/${_.kebabCase(text)}`}
-      className={classes.margin}
-    >
-      <Chip size={size} label={text} color="primary" onClick={onClick} />
+    <Link key={text} to={getTagPath(text)}>
+      <Chip
+        size={size}
+        label={text}
+        color="primary"
+        onClick={onClick}
+        className={classes.margin}
+      />
     </Link>
   );
 };
