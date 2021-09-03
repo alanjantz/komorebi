@@ -2,28 +2,31 @@ name: GitHub Pages Deploy
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
-    steps:      
+    steps:
       - name: Checkout
         uses: actions/checkout@v2
-        
+
       - name: Config
-        run : |
+        run: |
           git config --global user.email "alan_f_jantz@hotmail.com"
           git config --global user.name "alanjantz"
           yarn global add gatsby-cli
           gatsby telemetry --disable
-        
+
       - name: Install
         run: yarn
-        
-      - name: Build and Deploy
-        run: |
-          gatsby build --prefix-paths
-          gh-pages -d public -b gh-pages -r 'https://${{ secrets.TOKEN }}@github.com/komorebi.git'
-          
+
+      - name: Run tests
+        run: yarn tests
+
+      - name: Build
+        run: yarn build
+
+      - name: Deploy
+        run: yarn deploy
