@@ -23,5 +23,5 @@ jobs:
       - name: Build and Deploy
         run: |
           gatsby build --prefix-paths
-          gh-pages -d public -b gh-pages -r 'https://${{ GITHUB_TOKEN }}@github.com/${{ GITHUB_REPOSITORY }}.git'
+          gh-pages -d public -b gh-pages -r 'https://${{ secrets.TOKEN }}@github.com/komorebi.git'
           
