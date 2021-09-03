@@ -18,22 +18,23 @@ jobs:
           git config --global user.name "Alan Jantz"
           git config user.password ${{ secrets.GITHUB_TOKEN }}
           git remote set-url origin git@github.com:alanjantz/komorebi.git
-          
+
       - name: Config gatsby
         run: |
           yarn global add gatsby-cli
           gatsby telemetry --disable
-          
+
       - name: Install
         run: yarn
 
       - name: Run tests
         run: yarn test
 
-      - name: Build and Deploy
-        uses: xmflsct/action-publish-gatsby@v1.0.0
-        with:
-          publishBranch: 'gh-pages'
-          token: ${{ secrets.TOKEN }}
-          name: 'Alan Jantz'
-          email: 'alan_f_jantz@hotmail.com'
+      - name: Deploy
+        using: 'docker'
+        image: 'Dockerfile'
+        args:
+          - 'gh-pages'
+          - ${{ secrets.TOKEN }}
+          - 'Alan Jantz'
+          - 'alan_f_jantz@hotmail.com'
