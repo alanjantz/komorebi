@@ -32,4 +32,4 @@ jobs:
         run: yarn build
 
       - name: Deploy
-        run: yarn run gh-pages -d public -b gh-pages -u 'Alan Jantz <alan_f_jantz@hotmail.com>' -r 'https://${{ secrets.TOKEN }}@github.com/komorebi.git' -m 'Deploy Gatsby Pages'
+        run: yarn run gh-pages -d public -b gh-pages -u 'Alan Jantz <alan_f_jantz@hotmail.com>' -m 'Deploy Gatsby Pages'
