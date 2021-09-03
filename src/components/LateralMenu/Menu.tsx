@@ -16,7 +16,7 @@ import { tags, getTagPath } from '@/services/TagServices';
 const Menu: React.FC = () => {
   const [open, setOpen] = useState(false);
   const classes = useStyles();
-  const baseUrl = `/${getBaseUrl()}`;
+  const baseUrl = getBaseUrl();
 
   const handleClick = () => {
     setOpen(!open);
@@ -24,7 +24,7 @@ const Menu: React.FC = () => {
 
   return (
     <List component="nav" aria-labelledby="nested-list-subheader">
-      <ListItemLink href={baseUrl}>
+      <ListItemLink href={`/${baseUrl}`}>
         <ListItemIcon>
           <HomeIcon />
         </ListItemIcon>
@@ -44,7 +44,7 @@ const Menu: React.FC = () => {
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
           {tags.map((tag) => {
-            const tagPath = baseUrl + getTagPath(tag);
+            const tagPath = (baseUrl ? `/${baseUrl}` : '') + getTagPath(tag);
 
             return (
               <ListItemLink href={tagPath} className={classes.nested} key={tag}>
