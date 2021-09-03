@@ -15,7 +15,7 @@ jobs:
       - name: Config
         run : |
           git config --global user.email "alan_f_jantz@hotmail.com"
-          git config --global user.name "GitHub Pages"
+          git config --global user.name "alanjantz"
         
       - name: Install
         run: npm install
