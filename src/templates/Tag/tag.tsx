@@ -1,17 +1,20 @@
 import React from 'react';
 import { PageProps, graphql } from 'gatsby';
-import { Grid, Layout } from '../components';
+import { Grid, Layout } from '../../components';
+import Tag from '../../components/Tag';
+import { Title, Subtitle } from './styles';
 
 const TagTemplate: React.FC<PageProps> = (props) => {
   const { data, pageContext } = props;
   const { tag } = pageContext;
-  const { pathname } = props.location;
 
   return (
     <Layout>
-      <h2 style={{ fontSize: '22px', padding: '0px 15px' }}>
-        Todos os posts com a tag: {tag}
-      </h2>
+      <Title>
+        <Subtitle>Filtrando postagens com a categoria</Subtitle>
+        <Tag text={tag} size="small" clickable={false} />
+      </Title>
+
       <Grid data={data} />
     </Layout>
   );

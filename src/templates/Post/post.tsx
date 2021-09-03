@@ -1,7 +1,7 @@
 import React from 'react';
 import { PageProps, graphql } from 'gatsby';
-import { Container, Layout, Post } from '../components';
-import { PostModel, SeasonModel } from '../models';
+import { Container, Layout, Post } from '../../components';
+import { PostModel, SeasonModel } from '../../models';
 
 const PostTemplate: React.FC<PageProps> = (props) => {
   const { data } = props;
