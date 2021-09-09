@@ -7,6 +7,8 @@ tags:
   - Ação
   - Aventura
   - Fantasia
+  - Assistido
+  - Recomendo
 poster: "http://i.imgur.com/IMI5l8r.png"
 cover: "http://i.imgur.com/1XvBcdl.jpg"
 seasons: "[

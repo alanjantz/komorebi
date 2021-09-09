@@ -7,6 +7,7 @@ tags:
   - Comédia
   - Ação
   - Shounen
+  - Assistido
 poster: "http://i.imgur.com/C9cTRJf.png"
 cover: "http://i.imgur.com/a1Giavo.jpg"
 seasons: "[
