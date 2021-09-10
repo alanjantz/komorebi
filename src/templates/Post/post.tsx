@@ -1,6 +1,6 @@
 import React from 'react';
 import { PageProps, graphql } from 'gatsby';
-import { Container, Layout, Post } from '../../components';
+import { Container, Layout, Post, SEO } from '../../components';
 import { PostModel, SeasonModel } from '../../models';
 
 const PostTemplate: React.FC<PageProps> = (props) => {
@@ -22,6 +22,7 @@ const PostTemplate: React.FC<PageProps> = (props) => {
 
   return (
     <Layout>
+      <SEO title={title} url={slug} description={description} article />
       <Container>
         <Post post={post} />
       </Container>

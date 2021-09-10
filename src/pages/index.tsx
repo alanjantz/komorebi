@@ -1,16 +1,15 @@
 import React from 'react';
 import { PageProps, graphql } from 'gatsby';
-import { Layout, Grid } from 'components';
+import { Layout, Grid, SEO } from 'components';
 
 const Home: React.FC<PageProps> = (props) => {
   const { data } = props;
 
   return (
-    <main>
-      <Layout>
-        <Grid data={data} serchable />
-      </Layout>
-    </main>
+    <Layout>
+      <SEO />
+      <Grid data={data} serchable />
+    </Layout>
   );
 };
 

@@ -23,16 +23,18 @@ const Layout: React.FC<LayoutProps> = ({ pageTitle, children }) => {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <AppBar
-        pageTitle={pageTitle || 'Komorebi'}
-        toggleDrawer={toggleDrawer}
-        onThemeChange={onThemeChange}
-      />
-      <LateralMenu open={open} toggleDrawer={toggleDrawer} />
-      {children}
-    </ThemeProvider>
+    <main>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <AppBar
+          pageTitle={pageTitle || 'Komorebi'}
+          toggleDrawer={toggleDrawer}
+          onThemeChange={onThemeChange}
+        />
+        <LateralMenu open={open} toggleDrawer={toggleDrawer} />
+        {children}
+      </ThemeProvider>
+    </main>
   );
 };
 

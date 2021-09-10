@@ -5,6 +5,7 @@ import Layout from './Layout';
 import Post from './Post';
 import NotFoundContainer from './NotFoundContainer';
 import SearchInput from './SearchInput';
+import SEO from './SEO';
 
 export {
   Container,
@@ -14,4 +15,5 @@ export {
   Post,
   NotFoundContainer,
   SearchInput,
+  SEO,
 };
