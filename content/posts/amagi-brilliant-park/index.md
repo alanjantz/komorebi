@@ -2,7 +2,7 @@
 title: "Amagi Brilliant Park"
 subtitle: "O Parque Brilhante de Amagi"
 date: "2021-09-05"
-description: "A história começa com Seiya Kanie, um garoto do ensino médio que é convidado para um encontro em um parque de diversões por uma bela e misteriosa estudante transferida chamada Isuzu Sento. Ele é apresentado a Ratifa, uma princesa e gestora do parque, e é convidado para ser o gerente desse “parque de diversões decepcionante nos subúrbios de Tóquio.”"
+description: "A história começa com Seiya Kanie, um garoto do ensino médio que é convidado para um encontro em um parque de diversões por uma bela e misteriosa estudante transferida chamada Isuzu Sento. Ele é apresentado a Ratifa, uma princesa e gestora do parque, e é convidado para ser o gerente desse \"parque de diversões decepcionante nos subúrbios de Tóquio.\""
 tags:
   - Comédia
   - Assistido
