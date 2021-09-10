@@ -24,9 +24,9 @@ const AppBar: React.FC<AppBarProps> = ({
   const [isLightTheme, setIsLightTheme] = useState<boolean>(true);
 
   useEffect(() => {
-    const themeStorage = localStorage.getItem(themeStorageKey);
-    setIsLightTheme(themeStorage !== 'dark');
-    onThemeChange(themeStorage === 'light' ? 'light' : 'dark');
+    const isLight = localStorage.getItem(themeStorageKey) !== 'dark';
+    setIsLightTheme(isLight);
+    onThemeChange(isLight ? 'light' : 'dark');
   }, []);
 
   const changeThemeColor = useCallback(() => {
