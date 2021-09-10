@@ -21,7 +21,7 @@ const Tag: React.FC<TagProps> = ({ text, size, clickable = true }) => {
     <Chip
       size={size}
       label={text}
-      color="primary"
+      color="secondary"
       onClick={clickable ? onClick : undefined}
       className={classes.margin}
     />

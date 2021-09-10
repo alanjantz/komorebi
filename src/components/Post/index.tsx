@@ -67,7 +67,7 @@ const Post: React.FC<PostProps> = ({ post }) => {
             <IconButton
               aria-label="compartilhar"
               onClick={copy}
-              color="secondary"
+              color="default"
             >
               <ShareIcon fontSize="small" />
             </IconButton>

@@ -2,17 +2,14 @@ import { createTheme } from '@material-ui/core/styles';
 
 const font = "'Roboto', sans-serif";
 
-const primaryColor = '#171e28';
-const secondaryColor = '#f58d1e';
-
 export const lightTheme = createTheme({
   palette: {
     type: 'light',
     primary: {
-      main: primaryColor,
+      main: '#171e28',
     },
     secondary: {
-      main: secondaryColor,
+      main: '#242f3e',
     },
     background: {
       default: '#eff1f4',
@@ -27,13 +24,13 @@ export const darkTheme = createTheme({
   palette: {
     type: 'dark',
     primary: {
-      main: primaryColor,
+      main: '#242f3e',
     },
     secondary: {
-      main: secondaryColor,
+      main: '#171e28',
     },
     background: {
-      default: '#16161c',
+      default: '#1F2021',
     },
   },
   typography: {
