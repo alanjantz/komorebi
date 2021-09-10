@@ -1,4 +1,4 @@
-name: Application Build and Deploy
+name: Application Deploy
 
 on:
   push:
@@ -11,15 +11,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Install
-        run: yarn
-
-      - name: Build
-        run: yarn build
-
-      - name: Run tests
-        run: yarn test
 
       - name: Deploy
         uses: enriikke/gatsby-gh-pages-action@v2.2.0
