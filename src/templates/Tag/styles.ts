@@ -1,10 +1,11 @@
 import styled from 'styled-components';
-import { theme } from '../../components/Layout';
+import { withTheme } from '@material-ui/core/styles';
 
-export const Title = styled.div`
-  margin-top: ${theme.spacing(2)}px;
+export const Title = withTheme(styled.div`
+  margin: ${(props) => props.theme.spacing(2)}px;
   text-align: center;
-`;
-export const Subtitle = styled.div`
-  margin: ${theme.spacing(1)}px 0;
-`;
+`);
+
+export const Subtitle = withTheme(styled.div`
+  margin: ${(props) => props.theme.spacing(2)}px;
+`);

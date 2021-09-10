@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { makeStyles, createStyles } from '@material-ui/core/styles';
-import { theme } from '../Layout';
+import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 
 export const Container = styled.div``;
 
@@ -12,7 +11,7 @@ export const Image = styled.div`
 `;
 
 export const useStyles = makeStyles(
-  () =>
+  (theme: Theme) =>
     createStyles({
       paper: {
         padding: theme.spacing(2),
