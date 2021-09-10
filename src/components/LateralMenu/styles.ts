@@ -6,7 +6,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       background: theme.palette.action.selected,
     },
     nested: {
-      paddingLeft: theme.spacing(9),
+      paddingLeft: theme.spacing(2),
       background: theme.palette.divider,
     },
   }),

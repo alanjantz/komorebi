@@ -1,24 +1,30 @@
 import React from 'react';
 import List from '@material-ui/core/List';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
 import HomeIcon from '@material-ui/icons/Home';
-import ListItemLink from './ListItemLink';
+import StarIcon from '@material-ui/icons/Star';
+import AlarmOnIcon from '@material-ui/icons/AlarmOn';
 import { getBaseUrl } from '../../utils/urlUtils';
+import { getCompleteTagPath } from '@/services/TagServices';
 import CategoryList from './CategoryList';
+import ListItem from './LisItem';
 
 const Menu: React.FC = () => {
   const baseUrl = getBaseUrl();
 
   return (
     <List component="nav" aria-labelledby="nested-list-subheader">
-      <ListItemLink href={`/${baseUrl}`}>
-        <ListItemIcon>
-          <HomeIcon />
-        </ListItemIcon>
-        <ListItemText primary="Início" />
-      </ListItemLink>
-      <CategoryList baseUrl={baseUrl} />
+      <ListItem href={`/${baseUrl}`} icon={<HomeIcon />} title="Início" />
+      <ListItem
+        href={getCompleteTagPath(baseUrl, 'Recomendo')}
+        icon={<StarIcon />}
+        title="Recomendos"
+      />
+      <CategoryList />
+      <ListItem
+        href={getCompleteTagPath(baseUrl, 'Assistido')}
+        icon={<AlarmOnIcon />}
+        title="Assistidos"
+      />
     </List>
   );
 };

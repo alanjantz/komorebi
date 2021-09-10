@@ -8,16 +8,14 @@ import FolderIcon from '@material-ui/icons/Folder';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import ListItemLink from './ListItemLink';
+import { tags, getCompleteTagPath } from '@/services/TagServices';
+import { getBaseUrl } from '../../utils/urlUtils';
 import { useStyles } from './styles';
-import { tags, getTagPath } from '@/services/TagServices';
 
-interface CategoryListProps {
-  baseUrl: string;
-}
-
-const CategoryList: React.FC<CategoryListProps> = ({ baseUrl }) => {
+const CategoryList: React.FC = () => {
   const [open, setOpen] = useState(false);
   const classes = useStyles();
+  const baseUrl = getBaseUrl();
 
   const handleClick = () => {
     setOpen(!open);
@@ -39,7 +37,7 @@ const CategoryList: React.FC<CategoryListProps> = ({ baseUrl }) => {
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
           {tags.sort().map((tag) => {
-            const tagPath = (baseUrl ? `/${baseUrl}` : '') + getTagPath(tag);
+            const tagPath = getCompleteTagPath(baseUrl, tag);
 
             return (
               <ListItemLink href={tagPath} className={classes.nested} key={tag}>

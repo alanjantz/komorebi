@@ -39,3 +39,6 @@ export const tags: string[] = [
 ];
 
 export const getTagPath = (tag: string): string => `/tag/${_.kebabCase(tag)}`;
+
+export const getCompleteTagPath = (baseUrl: string, tag: string): string =>
+  (baseUrl ? `/${baseUrl}` : '') + getTagPath(tag);
