@@ -7,6 +7,8 @@ tags:
   - Escolar
   - Comédia
   - Ecchi
+  - Assistido
+  - Recomendo
 poster: "http://i.imgur.com/793O8Qb.png"
 cover: "http://i.imgur.com/AG302kn.jpg"
 seasons: "[

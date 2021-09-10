@@ -8,6 +8,8 @@ tags:
   - Sobrenatural
   - Shounen
   - Fantasia
+  - Assistido
+  - Recomendo
 poster: "http://i.imgur.com/j4udnfG.png"
 cover: "http://i.imgur.com/BPknolj.jpg"
 seasons: "[

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { theme } from '../Layout';
+import { withTheme } from '@material-ui/core/styles';
 
-export const SearchContainer = styled.div`
-  margin: ${theme.spacing(2)}px;
+export const SearchContainer = withTheme(styled.div`
+  margin: ${(props) => props.theme.spacing(2)}px;
   text-align: center;
-`;
+`);

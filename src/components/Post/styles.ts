@@ -4,9 +4,9 @@ import {
   makeStyles,
   TableCell as MaterialTableCell,
   TableRow,
+  Theme,
   Tooltip as MaterialTooltip,
 } from '@material-ui/core';
-import { theme } from '../Layout';
 
 export const TableCell = withStyles(() =>
   createStyles({
@@ -18,7 +18,7 @@ export const TableCell = withStyles(() =>
   }),
 )(MaterialTableCell);
 
-export const StyledTableCell = withStyles(() =>
+export const StyledTableCell = withStyles((theme: Theme) =>
   createStyles({
     head: {
       backgroundColor: theme.palette.primary.main,
@@ -31,7 +31,7 @@ export const StyledTableCell = withStyles(() =>
   }),
 )(TableCell);
 
-export const StyledTableRow = withStyles(() =>
+export const StyledTableRow = withStyles((theme: Theme) =>
   createStyles({
     root: {
       '&:nth-of-type(even)': {

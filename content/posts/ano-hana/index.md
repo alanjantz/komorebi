@@ -7,6 +7,8 @@ Jintan se tornou um Hikikomori, que vive praticamente o tempo todo dentro de cas
 tags:
   - Drama
   - Slice of Life
+  - Assistido
+  - Recomendo
 poster: "http://i.imgur.com/DmgTjtc.png"
 cover: "http://i.imgur.com/VkaTSjX.jpg"
 seasons: "[

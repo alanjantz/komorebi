@@ -10,6 +10,7 @@ tags:
   - Romance
   - Ecchi
   - Superpoderes
+  - Assistido
 poster: "http://i.imgur.com/OA7x4oY.png"
 cover: "http://i.imgur.com/o9b435n.jpg"
 seasons: "[

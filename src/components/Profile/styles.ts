@@ -1,16 +1,16 @@
 import styled from 'styled-components';
-import { theme } from '../Layout';
+import { withTheme } from '@material-ui/core/styles';
 
 export const Container = styled.div`
   width: 350px;
   text-align: center;
 `;
 
-export const Background = styled.div`
+export const Background = withTheme(styled.div`
   width: 100%;
   height: 64px;
-  background: ${theme.palette.primary.main};
-`;
+  background: ${(props) => props.theme.palette.primary.main};
+`);
 
 export const Icon = styled.div`
   width: 100px;
