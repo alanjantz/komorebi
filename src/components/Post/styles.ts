@@ -40,11 +40,12 @@ export const StyledTableRow = withStyles((theme: Theme) =>
       '&:last-child td': {
         borderBottom: 'none',
       },
+      height: '45px',
     },
   }),
 )(TableRow);
 
-export const useStyles = makeStyles(() =>
+export const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       margin: 15,
@@ -61,6 +62,10 @@ export const useStyles = makeStyles(() =>
     firstColumn: {
       width: 40,
       textAlign: 'center',
+    },
+    check: {
+      float: 'right',
+      color: theme.palette.success.main,
     },
   }),
 );

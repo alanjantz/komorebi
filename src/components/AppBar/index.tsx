@@ -4,16 +4,14 @@ import { IconButton, Toolbar, Typography } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import DarkIcon from '@material-ui/icons/Brightness4';
 import LightIcon from '@material-ui/icons/Brightness7';
+import storage from '../../utils/localStorageUtils';
 import { useStyles } from './styles';
-import { ContactsOutlined } from '@material-ui/icons';
 
 interface AppBarProps {
   pageTitle: string;
   toggleDrawer: (isOpen: boolean) => void;
   onThemeChange: (theme: 'light' | 'dark') => void;
 }
-
-const themeStorageKey = '@komorebi/theme';
 
 const AppBar: React.FC<AppBarProps> = ({
   pageTitle,
@@ -24,7 +22,7 @@ const AppBar: React.FC<AppBarProps> = ({
   const [isLightTheme, setIsLightTheme] = useState<boolean>(true);
 
   useEffect(() => {
-    const isLight = localStorage.getItem(themeStorageKey) !== 'dark';
+    const isLight = storage.getTheme() !== 'dark';
     setIsLightTheme(isLight);
     onThemeChange(isLight ? 'light' : 'dark');
   }, []);
@@ -32,7 +30,7 @@ const AppBar: React.FC<AppBarProps> = ({
   const changeThemeColor = useCallback(() => {
     const newTheme = isLightTheme ? 'dark' : 'light';
     onThemeChange(newTheme);
-    localStorage.setItem(themeStorageKey, newTheme);
+    storage.setTheme(newTheme);
     setIsLightTheme((value) => !value);
   }, [isLightTheme]);
 

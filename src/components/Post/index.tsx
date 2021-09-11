@@ -58,7 +58,11 @@ const Post: React.FC<PostProps> = ({ post }) => {
 
           <TableContainer>
             {seasons.map((season) => (
-              <Season key={season.year} season={season} />
+              <Season
+                key={season.year}
+                season={season}
+                watched={tags.includes('Assistido')}
+              />
             ))}
           </TableContainer>
         </CardContent>

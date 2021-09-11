@@ -1,5 +1,6 @@
 import React from 'react';
 import { Table, TableBody, TableHead, TableRow } from '@material-ui/core';
+import CheckIcon from '@material-ui/icons/Check';
 import { SeasonModel } from '@/models';
 import Tag from '../Tag';
 import {
@@ -11,9 +12,11 @@ import {
 
 interface SeasonProps {
   season: SeasonModel;
+  watched?: boolean;
 }
 
-const Season: React.FC<SeasonProps> = ({ season }) => {
+const Season: React.FC<SeasonProps> = ({ season, watched }) => {
+  const { title, year, episodesWatched } = season;
   const classes = useStyles();
 
   const formatNumber = (value: number, padding: number): string =>
@@ -67,6 +70,17 @@ const Season: React.FC<SeasonProps> = ({ season }) => {
     );
   };
 
+  const checkEpisodeWatched = (index: number): boolean => {
+    if (episodesWatched) {
+      if (typeof episodesWatched === 'number') {
+        return (episodesWatched as number) >= index;
+      }
+      return (episodesWatched as Array<number>).includes(index);
+    }
+
+    return false;
+  };
+
   const episodes = getEpisodesList(season.episodes);
   const numberOfZeros = episodes.length.toString().length;
 
@@ -77,19 +91,27 @@ const Season: React.FC<SeasonProps> = ({ season }) => {
           <StyledTableCell className={classes.firstColumn}>
             {episodes.length}
           </StyledTableCell>
-          <StyledTableCell>{season.title}</StyledTableCell>
-          <StyledTableCell align="right">{season.year}</StyledTableCell>
+          <StyledTableCell>{title}</StyledTableCell>
+          <StyledTableCell align="right">{year}</StyledTableCell>
         </TableRow>
       </TableHead>
       <TableBody>
         {episodes.map((epTitle, index) => {
+          const episodeWatched = watched || checkEpisodeWatched(index + 1);
           const key = index + 1;
           return (
             <StyledTableRow key={key}>
               <TableCell className={classes.firstColumn}>
                 {formatNumber(key, numberOfZeros)}
               </TableCell>
-              <TableCell colSpan={2}>{getEpisodeTitle(epTitle)}</TableCell>
+              <TableCell colSpan={episodeWatched ? 1 : 2}>
+                {getEpisodeTitle(epTitle)}
+              </TableCell>
+              {episodeWatched && (
+                <TableCell>
+                  <CheckIcon className={classes.check} />
+                </TableCell>
+              )}
             </StyledTableRow>
           );
         })}
