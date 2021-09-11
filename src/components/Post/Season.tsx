@@ -1,6 +1,7 @@
 import React from 'react';
 import { Table, TableBody, TableHead, TableRow } from '@material-ui/core';
 import { SeasonModel } from '@/models';
+import Tag from '../Tag';
 import {
   StyledTableCell,
   StyledTableRow,
@@ -36,6 +37,36 @@ const Season: React.FC<SeasonProps> = ({ season }) => {
     return result;
   };
 
+  const getEpisodeTitle = (episodeTitle: string): React.ReactElement => {
+    const keyWords: string[] = ['OVA', 'FILLER'];
+
+    let title = episodeTitle;
+    let info = '';
+
+    keyWords.forEach((keyWord) => {
+      const word = `(${keyWord})`;
+      if (title.includes(word)) {
+        title = title.replace(word, '');
+        info = keyWord;
+      }
+    });
+
+    return (
+      <>
+        {title.trim()}{' '}
+        {info && (
+          <Tag
+            size="small"
+            text={info}
+            clickable={false}
+            noMargin
+            color="default"
+          />
+        )}
+      </>
+    );
+  };
+
   const episodes = getEpisodesList(season.episodes);
   const numberOfZeros = episodes.length.toString().length;
 
@@ -58,7 +89,7 @@ const Season: React.FC<SeasonProps> = ({ season }) => {
               <TableCell className={classes.firstColumn}>
                 {formatNumber(key, numberOfZeros)}
               </TableCell>
-              <TableCell colSpan={2}>{epTitle}</TableCell>
+              <TableCell colSpan={2}>{getEpisodeTitle(epTitle)}</TableCell>
             </StyledTableRow>
           );
         })}

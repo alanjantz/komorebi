@@ -1,16 +1,25 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import Chip from '@material-ui/core/Chip';
-import { useStyles } from './styles';
+import { PropTypes } from '@material-ui/core';
 import { getTagPath } from '../../services/TagServices';
+import { useStyles } from './styles';
 
 interface TagProps {
   text: string;
   size: 'small' | 'medium';
+  color?: Exclude<PropTypes.Color, 'inherit'>;
   clickable?: boolean;
+  noMargin?: boolean;
 }
 
-const Tag: React.FC<TagProps> = ({ text, size, clickable = true }) => {
+const Tag: React.FC<TagProps> = ({
+  text,
+  size,
+  clickable = true,
+  noMargin,
+  color = 'secondary',
+}) => {
   const classes = useStyles();
 
   const onClick = (): void => {
@@ -21,9 +30,9 @@ const Tag: React.FC<TagProps> = ({ text, size, clickable = true }) => {
     <Chip
       size={size}
       label={text}
-      color="secondary"
+      color={color}
       onClick={clickable ? onClick : undefined}
-      className={classes.margin}
+      className={noMargin ? '' : classes.margin}
     />
   );
 
