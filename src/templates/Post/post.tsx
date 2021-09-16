@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { PageProps, graphql } from 'gatsby';
 import { Container, Layout, Post, SEO } from '../../components';
 import { PostModel, SeasonModel } from '../../models';
 
 const PostTemplate: React.FC<PageProps> = (props) => {
   const { data } = props;
-  const { fields } = data.markdownRemark;
-  const { slug } = fields;
+  const { slug } = data.markdownRemark.fields;
   const { title, subtitle, tags, seasons, description, poster, cover } =
     data.markdownRemark.frontmatter;
 
@@ -24,7 +23,7 @@ const PostTemplate: React.FC<PageProps> = (props) => {
     <Layout>
       <SEO title={title} url={slug} description={description} article />
       <Container>
-        <Post post={post} postId={slug.toString().replaceAll('/', '')} />
+        <Post post={post} postLink={slug} />
       </Container>
     </Layout>
   );

@@ -23,16 +23,22 @@ import { useStyles, Tooltip } from './styles';
 
 interface PostProps {
   post: PostModel;
-  postId: string;
+  postLink: string;
 }
 
-const Post: React.FC<PostProps> = ({ post, postId }) => {
+const Post: React.FC<PostProps> = ({ post, postLink }) => {
   const [open, setOpen] = useState(false);
   const [isSaved, setIsSaved] = useState<boolean>();
   const { title, subtitle, tags, synopsis, seasons } = post;
   const classes = useStyles();
 
+  const getPostId = useCallback(
+    (): string => postLink.replaceAll('/', ''),
+    [postLink],
+  );
+
   useEffect(() => {
+    const postId = getPostId();
     setIsSaved(!!storage.getSavedItems().find((i) => i === postId));
   }, []);
 
@@ -52,16 +58,16 @@ const Post: React.FC<PostProps> = ({ post, postId }) => {
 
   const save = useCallback((): void => {
     setIsSaved(true);
-    storage.savePost(postId);
+    storage.savePost(getPostId());
   }, []);
 
   const remove = useCallback((): void => {
     setIsSaved(false);
-    storage.removeSavedPost(postId);
+    storage.removeSavedPost(getPostId());
   }, []);
 
   const getHeartIcon = useCallback((): React.ReactElement => {
-    let icon = <FavoriteBorderIcon fontSize="small" htmlColor="white" />;
+    let icon = <FavoriteBorderIcon fontSize="small" />;
     let onClick = save;
     let tooltipMessage = 'Salvar';
     let label = `salvar ${title} em seus favoritos`;
@@ -75,7 +81,7 @@ const Post: React.FC<PostProps> = ({ post, postId }) => {
 
     return (
       <Tooltip title={tooltipMessage} arrow>
-        <IconButton aria-label={label} onClick={onClick}>
+        <IconButton aria-label={label} onClick={onClick} color="default">
           {icon}
         </IconButton>
       </Tooltip>

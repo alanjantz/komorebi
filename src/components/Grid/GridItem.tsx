@@ -23,20 +23,21 @@ const GridItem: React.FC<GridItemProps> = ({
 }) => {
   const [isSaved, setIsSaved] = useState<boolean>();
 
-  const postId = postLink.replaceAll('/', '');
+  const getPostId = useCallback((): string => postLink.replaceAll('/', ''), []);
 
   useEffect(() => {
+    const postId = getPostId();
     setIsSaved(!!storage.getSavedItems().find((i) => i === postId));
   }, []);
 
   const save = useCallback((): void => {
     setIsSaved(true);
-    storage.savePost(postId);
+    storage.savePost(getPostId());
   }, []);
 
   const remove = useCallback((): void => {
     setIsSaved(false);
-    storage.removeSavedPost(postId);
+    storage.removeSavedPost(getPostId());
   }, []);
 
   const getHeartIcon = useCallback((): React.ReactElement => {
