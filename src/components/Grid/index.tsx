@@ -47,7 +47,7 @@ const Grid: React.FC<GridProps> = ({ data, serchable }) => {
 
     return (
       <TextContainer>
-        Hum, parece que não tem nada salvo ainda. Experimento clicar nos
+        Hum, parece que não tem nada salvo ainda. Experimente clicar nos
         corações!
       </TextContainer>
     );
