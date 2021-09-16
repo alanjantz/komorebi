@@ -22,7 +22,10 @@ const SavedTemplate: React.FC<PageProps> = (props) => {
   return (
     <Layout>
       <SEO />
-      <Grid data={getFilteredData()} serchable />
+      <Grid
+        data={typeof window !== 'undefined' ? getFilteredData() : data}
+        serchable
+      />
     </Layout>
   );
 };
