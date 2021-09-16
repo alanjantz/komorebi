@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import MaterialGrid from '@material-ui/core/Grid';
-import { useStyles } from './styles';
 import SearchInput from '../SearchInput';
 import GridItem from './GridItem';
+import { useStyles, TextContainer } from './styles';
 
 interface GridProps {
   data?: any;
@@ -28,9 +28,36 @@ const Grid: React.FC<GridProps> = ({ data, serchable }) => {
     setPostList(filteredData);
   }, [query]);
 
+  const renderList = useCallback(() => {
+    if (postList.length > 0) {
+      return postList.map((edge) => {
+        const post = edge.node.frontmatter;
+        const postLink = edge.node.fields.slug;
+
+        return (
+          <GridItem
+            key={postLink}
+            postTitle={post.title}
+            postLink={postLink}
+            postPoster={post.poster}
+          />
+        );
+      });
+    }
+
+    return (
+      <TextContainer>
+        Hum, parece que não tem nada salvo ainda. Experimento clicar nos
+        corações!
+      </TextContainer>
+    );
+  }, [postList]);
+
   return (
     <div className={classes.root}>
-      {serchable && <SearchInput onChange={onSearchInputChange} />}
+      {serchable && postList.length > 0 && (
+        <SearchInput onChange={onSearchInputChange} />
+      )}
       <MaterialGrid
         container
         spacing={1}
@@ -38,19 +65,7 @@ const Grid: React.FC<GridProps> = ({ data, serchable }) => {
         justifyContent="center"
         alignItems="center"
       >
-        {postList.map((edge) => {
-          const post = edge.node.frontmatter;
-          const postLink = edge.node.fields.slug;
-
-          return (
-            <GridItem
-              key={postLink}
-              postTitle={post.title}
-              postLink={postLink}
-              postPoster={post.poster}
-            />
-          );
-        })}
+        {renderList()}
       </MaterialGrid>
     </div>
   );

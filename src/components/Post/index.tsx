@@ -19,6 +19,7 @@ import Subtitle from './Subtitle';
 import TagGroup from './TagGroup';
 import Season from './Season';
 import storage from '../../utils/localStorageUtils';
+import { removeUrlSlashes } from '../../utils/urlUtils';
 import { useStyles, Tooltip } from './styles';
 
 interface PostProps {
@@ -33,7 +34,7 @@ const Post: React.FC<PostProps> = ({ post, postLink }) => {
   const classes = useStyles();
 
   const getPostId = useCallback(
-    (): string => postLink.replaceAll('/', ''),
+    (): string => removeUrlSlashes(postLink),
     [postLink],
   );
 

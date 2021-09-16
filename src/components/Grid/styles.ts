@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { makeStyles, createStyles } from '@material-ui/core/styles';
+import { makeStyles, createStyles, withTheme } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles(() =>
   createStyles({
@@ -29,3 +29,8 @@ export const IconBox = styled.div`
     transparent 60%
   );
 `;
+
+export const TextContainer = withTheme(styled.div`
+  padding: ${(props) => props.theme.spacing(5)}px
+    ${(props) => props.theme.spacing(2)}px;
+`);

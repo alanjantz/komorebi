@@ -42,6 +42,7 @@ exports.createPages = ({ graphql, actions }) => {
   return new Promise((resolve, reject) => {
     const postTemplate = path.resolve('src/templates/Post/post.tsx');
     const tagTemplate = path.resolve('src/templates/Tag/tag.tsx');
+    const savedTemplate = path.resolve('src/templates/Saved/saved.tsx');
     resolve(
       graphql(
         `
@@ -106,11 +107,27 @@ exports.createPages = ({ graphql, actions }) => {
         const posts = items.filter(
           (item) => item.node.fields.source === 'posts',
         );
-        posts.forEach(({ node }, index) => {
+        posts.forEach(({ node }) => {
           const { slug, source } = node.fields;
           createPage({
             path: slug,
             component: postTemplate,
+            context: {
+              slug,
+              source,
+            },
+          });
+        });
+
+        /* Cria as páginas de itens salvos */
+        const savedPosts = items.filter(
+          (item) => item.node.fields.source === 'posts',
+        );
+        savedPosts.forEach(({ node }) => {
+          const { slug, source } = node.fields;
+          createPage({
+            path: `/saved`,
+            component: savedTemplate,
             context: {
               slug,
               source,

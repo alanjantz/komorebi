@@ -8,6 +8,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import red from '@material-ui/core/colors/red';
 import Poster from '../Poster';
 import storage from '../../utils/localStorageUtils';
+import { removeUrlSlashes } from '../../utils/urlUtils';
 import { ActionGroup, IconBox } from './styles';
 
 interface GridItemProps {
@@ -23,7 +24,7 @@ const GridItem: React.FC<GridItemProps> = ({
 }) => {
   const [isSaved, setIsSaved] = useState<boolean>();
 
-  const getPostId = useCallback((): string => postLink.replaceAll('/', ''), []);
+  const getPostId = useCallback((): string => removeUrlSlashes(postLink), []);
 
   useEffect(() => {
     const postId = getPostId();

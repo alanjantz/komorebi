@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { PageProps, graphql } from 'gatsby';
 import { Container, Layout, Post, SEO } from '../../components';
 import { PostModel, SeasonModel } from '../../models';

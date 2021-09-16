@@ -4,6 +4,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import StarIcon from '@material-ui/icons/Star';
 import AlarmOnIcon from '@material-ui/icons/AlarmOn';
 import AlarmIcon from '@material-ui/icons/Alarm';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 import { getBaseUrl } from '../../utils/urlUtils';
 import { getCompleteTagPath } from '@/services/TagServices';
 import CategoryList from './CategoryList';
@@ -30,6 +31,11 @@ const Menu: React.FC = () => {
         href={getCompleteTagPath(baseUrl, 'Assistindo')}
         icon={<AlarmIcon />}
         title="Assistindo no momento"
+      />
+      <ListItem
+        href={`${baseUrl ? `/${baseUrl}` : ''}/saved`}
+        icon={<FavoriteIcon />}
+        title="Salvos"
       />
     </List>
   );
