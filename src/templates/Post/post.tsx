@@ -24,7 +24,7 @@ const PostTemplate: React.FC<PageProps> = (props) => {
     <Layout>
       <SEO title={title} url={slug} description={description} article />
       <Container>
-        <Post post={post} />
+        <Post post={post} postId={slug.replaceAll('/', '')} />
       </Container>
     </Layout>
   );

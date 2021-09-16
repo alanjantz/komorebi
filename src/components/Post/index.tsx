@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import {
   Card,
   CardActions,
@@ -10,21 +10,31 @@ import {
   TableContainer,
 } from '@material-ui/core';
 import ShareIcon from '@material-ui/icons/Share';
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import red from '@material-ui/core/colors/red';
 import { PostModel } from '../../models';
 import Title from './Title';
 import Subtitle from './Subtitle';
 import TagGroup from './TagGroup';
-import { useStyles, Tooltip } from './styles';
 import Season from './Season';
+import storage from '../../utils/localStorageUtils';
+import { useStyles, Tooltip } from './styles';
 
 interface PostProps {
   post: PostModel;
+  postId: string;
 }
 
-const Post: React.FC<PostProps> = ({ post }) => {
+const Post: React.FC<PostProps> = ({ post, postId }) => {
   const [open, setOpen] = useState(false);
+  const [isSaved, setIsSaved] = useState<boolean>();
   const { title, subtitle, tags, synopsis, seasons } = post;
   const classes = useStyles();
+
+  useEffect(() => {
+    setIsSaved(!!storage.getSavedItems().find((i) => i === postId));
+  }, []);
 
   const handleClose = () => {
     setOpen(false);
@@ -39,6 +49,38 @@ const Post: React.FC<PostProps> = ({ post }) => {
     document.body.removeChild(el);
     setOpen(true);
   };
+
+  const save = useCallback((): void => {
+    setIsSaved(true);
+    storage.savePost(postId);
+  }, []);
+
+  const remove = useCallback((): void => {
+    setIsSaved(false);
+    storage.removeSavedPost(postId);
+  }, []);
+
+  const getHeartIcon = useCallback((): React.ReactElement => {
+    let icon = <FavoriteBorderIcon fontSize="small" htmlColor="white" />;
+    let onClick = save;
+    let tooltipMessage = 'Salvar';
+    let label = `salvar ${title} em seus favoritos`;
+
+    if (isSaved) {
+      icon = <FavoriteIcon fontSize="small" htmlColor={red[900]} />;
+      onClick = remove;
+      tooltipMessage = 'Remover dos salvos';
+      label = `remover ${title} dos seus favoritos`;
+    }
+
+    return (
+      <Tooltip title={tooltipMessage} arrow>
+        <IconButton aria-label={label} onClick={onClick}>
+          {icon}
+        </IconButton>
+      </Tooltip>
+    );
+  }, [isSaved]);
 
   return (
     <>
@@ -67,6 +109,7 @@ const Post: React.FC<PostProps> = ({ post }) => {
           </TableContainer>
         </CardContent>
         <CardActions className={classes.actions}>
+          {getHeartIcon()}
           <Tooltip title="Compartilhar" arrow>
             <IconButton
               aria-label="compartilhar"

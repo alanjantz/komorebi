@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'gatsby';
 import MaterialGrid from '@material-ui/core/Grid';
-import Poster from '../Poster';
-import { Tooltip } from '../Post/styles';
 import { useStyles } from './styles';
 import SearchInput from '../SearchInput';
+import GridItem from './GridItem';
 
 interface GridProps {
   data?: any;
@@ -45,13 +43,12 @@ const Grid: React.FC<GridProps> = ({ data, serchable }) => {
           const postLink = edge.node.fields.slug;
 
           return (
-            <Tooltip title={post.title} placement="bottom" key={postLink} arrow>
-              <MaterialGrid item>
-                <Link to={postLink}>
-                  <Poster title={post.title} source={post.poster} />
-                </Link>
-              </MaterialGrid>
-            </Tooltip>
+            <GridItem
+              key={postLink}
+              postTitle={post.title}
+              postLink={postLink}
+              postPoster={post.poster}
+            />
           );
         })}
       </MaterialGrid>
