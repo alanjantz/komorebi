@@ -1,12 +1,12 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { Link } from 'gatsby';
 import Grid from '@material-ui/core/Grid';
-import Tooltip from '@material-ui/core/Tooltip';
 import IconButton from '@material-ui/core/IconButton';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import red from '@material-ui/core/colors/red';
 import Poster from '../Poster';
+import Tooltip from '../Tooltip';
 import storage from '../../utils/localStorageUtils';
 import { removeUrlSlashes } from '../../utils/urlUtils';
 import { ActionGroup, IconBox } from './styles';
@@ -62,7 +62,7 @@ const GridItem: React.FC<GridItemProps> = ({
   }, [isSaved]);
 
   return (
-    <Tooltip title={postTitle} placement="bottom" arrow>
+    <Tooltip title={postTitle} placement="bottom">
       <Grid item>
         <ActionGroup>{getHeartIcon()}</ActionGroup>
         <Link to={postLink}>
