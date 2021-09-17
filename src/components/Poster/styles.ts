@@ -1,5 +1,5 @@
-import { createStyles, makeStyles } from '@material-ui/core';
 import styled from 'styled-components';
+import { createStyles, makeStyles, withTheme } from '@material-ui/core';
 
 export const useStyles = makeStyles(() =>
   createStyles({
@@ -16,7 +16,7 @@ export const useStyles = makeStyles(() =>
   }),
 );
 
-export const ListItem = styled.div`
+export const ListItem = withTheme(styled.div`
   .MuiImageListItem-item {
     width: 300px;
     height: 450px;
@@ -25,8 +25,6 @@ export const ListItem = styled.div`
       width: 160px;
       height: 240px;
     }
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
+    border-radius: ${(props) => props.theme.shape.borderRadius}px;
   }
-`;
+`);

@@ -1,27 +1,29 @@
 import styled from 'styled-components';
-import { withTheme } from '@material-ui/core/styles';
+import { makeStyles, withTheme } from '@material-ui/core/styles';
 
-export const Container = styled.div`
-  width: 350px;
+export const useStyles = makeStyles((theme) => ({
+  icon: {
+    width: theme.spacing(10),
+    height: theme.spacing(10),
+    boxShadow: theme.shadows[12],
+    margin: `${theme.spacing(2)}px auto`,
+    border: '5px solid white',
+  },
+}));
+
+export const Container = withTheme(styled.div`
+  width: ${(props) => props.theme.spacing(40)}px;
   text-align: center;
-`;
+
+  h2 {
+    color: white;
+  }
+`);
 
 export const Background = withTheme(styled.div`
   width: 100%;
-  height: 64px;
+  display: block;
+  padding: ${(props) => props.theme.spacing(2)}px 0;
   background: ${(props) => props.theme.palette.primary.main};
+  box-shadow: ${(props) => props.theme.shadows[3]};
 `);
-
-export const Icon = styled.div`
-  width: 100px;
-  height: 100px;
-  background: url('https://i.imgur.com/gKCy0rO.jpg');
-  background-size: cover;
-  border: 5px solid white;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  border-radius: 50px;
-  margin: 0 auto;
-  margin-top: -50px;
-  box-shadow: 0 2px 10px 0 rgb(0 0 0 / 16%), 0 2px 5px 0 rgb(0 0 0 / 26%);
-`;
