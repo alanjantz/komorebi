@@ -9,6 +9,22 @@ export const defaultTheme = createTheme({
   typography: {
     fontFamily: font,
   },
+  overrides: {
+    MuiCssBaseline: {
+      '@global': {
+        '*': {
+          'scrollbar-width': 'thin',
+        },
+        '*::-webkit-scrollbar': {
+          width: '4px',
+          height: '4px',
+        },
+        '*::-webkit-scrollbar-thumb': {
+          background: 'rgba(0, 0, 0, 0.5)',
+        },
+      },
+    },
+  },
 });
 
 export const lightTheme = createTheme({
