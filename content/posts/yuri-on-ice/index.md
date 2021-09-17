@@ -8,6 +8,7 @@ tags:
   - Boys Love
   - Assistido
   - Recomendo
+  - Favorito
 poster: "https://i.imgur.com/P6XfkOB.png"
 cover: "https://i.imgur.com/IXkj4La.jpg"
 seasons: "[

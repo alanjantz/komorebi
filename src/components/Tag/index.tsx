@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import Chip from '@material-ui/core/Chip';
 import { PropTypes } from '@material-ui/core';
-import { getTagPath } from '../../services/TagServices';
+import { getTagPath, getTagIcon } from '../../services/TagServices';
 import { useStyles } from './styles';
 
 interface TagProps {
@@ -33,6 +33,7 @@ const Tag: React.FC<TagProps> = ({
       color={color}
       onClick={clickable ? onClick : undefined}
       className={noMargin ? '' : classes.margin}
+      icon={getTagIcon(text)}
     />
   );
 

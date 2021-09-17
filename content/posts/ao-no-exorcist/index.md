@@ -10,6 +10,7 @@ tags:
   - Fantasia
   - Assistido
   - Recomendo
+  - Favorito
 poster: "http://i.imgur.com/j4udnfG.png"
 cover: "http://i.imgur.com/BPknolj.jpg"
 seasons: "[
