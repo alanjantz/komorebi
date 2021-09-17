@@ -55,7 +55,7 @@ const Grid: React.FC<GridProps> = ({ data, serchable }) => {
 
   return (
     <div className={classes.root}>
-      {serchable && postList.length > 0 && (
+      {serchable && edges.length > 0 && (
         <SearchInput onChange={onSearchInputChange} />
       )}
       <MaterialGrid
