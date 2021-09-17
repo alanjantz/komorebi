@@ -20,7 +20,8 @@ import TagGroup from './TagGroup';
 import Season from './Season';
 import storage from '../../utils/localStorageUtils';
 import { removeUrlSlashes } from '../../utils/urlUtils';
-import { useStyles, Tooltip } from './styles';
+import Tooltip from '../Tooltip';
+import { useStyles } from './styles';
 
 interface PostProps {
   post: PostModel;
@@ -117,7 +118,7 @@ const Post: React.FC<PostProps> = ({ post, postLink }) => {
         </CardContent>
         <CardActions className={classes.actions}>
           {getHeartIcon()}
-          <Tooltip title="Compartilhar" arrow>
+          <Tooltip title="Compartilhar">
             <IconButton
               aria-label="compartilhar"
               onClick={copy}

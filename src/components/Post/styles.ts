@@ -5,7 +5,6 @@ import {
   TableCell as MaterialTableCell,
   TableRow,
   Theme,
-  Tooltip as MaterialTooltip,
 } from '@material-ui/core';
 
 export const TableCell = withStyles(() =>
@@ -73,20 +72,3 @@ export const useStyles = makeStyles((theme: Theme) =>
 export const Container = styled.div`
   margin-top: 10px;
 `;
-
-export const Tooltip = withStyles(() => ({
-  tooltip: {
-    backgroundColor: '#333333',
-    fontStyle: 'normal',
-    lineHeight: '14px',
-    textAlign: 'center',
-    fontSize: '12px !important',
-    letterSpacing: '0.4px',
-    fontColor: '#F2F2F2',
-  },
-  arrow: {
-    '&::before': {
-      color: '#333333',
-    },
-  },
-}))(MaterialTooltip);
