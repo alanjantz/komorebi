@@ -35,7 +35,7 @@ const AppBar: React.FC<AppBarProps> = ({
   }, [isLightTheme]);
 
   return (
-    <MaterialAppBar position="static">
+    <MaterialAppBar position="sticky">
       <Toolbar>
         <IconButton
           edge="start"
