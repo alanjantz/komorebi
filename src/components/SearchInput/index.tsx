@@ -1,6 +1,5 @@
 import React from 'react';
-import TextField from '@material-ui/core/TextField';
-import { SearchContainer } from './styles';
+import { SearchContainer, TextField } from './styles';
 
 interface SearchInputProps {
   onChange(value: string): void;
