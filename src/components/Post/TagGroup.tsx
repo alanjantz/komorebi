@@ -8,7 +8,7 @@ interface TagGroupProps {
 
 const TagGroup: React.FC<TagGroupProps> = ({ tags }) => (
   <Container>
-    {tags.map((tag) => (
+    {tags.sort().map((tag) => (
       <Tag key={tag} text={tag} size="small" />
     ))}
   </Container>
