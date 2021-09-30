@@ -5,6 +5,7 @@ import { lightTheme, darkTheme } from './styles';
 import './Layout.css';
 import AppBar from '../AppBar';
 import LateralMenu from '../LateralMenu';
+import ScrollTop from './ScrollTop';
 
 interface LayoutProps {
   pageTitle?: string;
@@ -24,6 +25,7 @@ const Layout: React.FC<LayoutProps> = ({ pageTitle, children }) => {
 
   return (
     <main>
+      <span id="back-to-top-anchor" />
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <AppBar
@@ -33,6 +35,7 @@ const Layout: React.FC<LayoutProps> = ({ pageTitle, children }) => {
         />
         <LateralMenu open={open} toggleDrawer={toggleDrawer} />
         {children}
+        <ScrollTop />
       </ThemeProvider>
     </main>
   );

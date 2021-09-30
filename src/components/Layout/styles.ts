@@ -1,4 +1,9 @@
-import { createTheme } from '@material-ui/core/styles';
+import {
+  createStyles,
+  createTheme,
+  makeStyles,
+  Theme,
+} from '@material-ui/core/styles';
 
 const font = "'Roboto', sans-serif";
 
@@ -58,3 +63,13 @@ export const darkTheme = createTheme({
     },
   },
 });
+
+export const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      position: 'fixed',
+      bottom: theme.spacing(2),
+      right: theme.spacing(2),
+    },
+  }),
+);
