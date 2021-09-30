@@ -43,20 +43,20 @@ const Season: React.FC<SeasonProps> = ({ season, watched }) => {
   const getEpisodeTitle = (episodeTitle: string): React.ReactElement => {
     const keyWords: string[] = ['OVA', 'FILLER'];
 
-    let title = episodeTitle;
+    let epTitle = episodeTitle;
     let info = '';
 
     keyWords.forEach((keyWord) => {
       const word = `(${keyWord})`;
-      if (title.includes(word)) {
-        title = title.replace(word, '');
+      if (epTitle.includes(word)) {
+        epTitle = epTitle.replace(word, '');
         info = keyWord;
       }
     });
 
     return (
       <>
-        {title.trim()}{' '}
+        {epTitle.trim()}{' '}
         {info && (
           <Tag
             size="small"
@@ -81,16 +81,18 @@ const Season: React.FC<SeasonProps> = ({ season, watched }) => {
     return false;
   };
 
-  const episodes = getEpisodesList(season.episodes);
+  const episodes = getEpisodesList(season.episodes || []);
   const numberOfZeros = episodes.length.toString().length;
 
   return (
     <Table>
       <TableHead>
         <TableRow>
-          <StyledTableCell className={classes.firstColumn}>
-            {episodes.length}
-          </StyledTableCell>
+          {episodes.length > 0 && (
+            <StyledTableCell className={classes.firstColumn}>
+              {episodes.length}
+            </StyledTableCell>
+          )}
           <StyledTableCell>{title}</StyledTableCell>
           <StyledTableCell align="right">{year}</StyledTableCell>
         </TableRow>

@@ -11,6 +11,6 @@ export interface PostModel {
 export interface SeasonModel {
   year: number;
   title: string;
-  episodes: string[] | number;
+  episodes?: string[] | number;
   episodesWatched?: number[] | number;
 }

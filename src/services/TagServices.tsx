@@ -4,6 +4,7 @@ import StarIcon from '@material-ui/icons/Star';
 import AlarmOnIcon from '@material-ui/icons/AlarmOn';
 import AlarmIcon from '@material-ui/icons/Alarm';
 import FavoriteIcon from '@material-ui/icons/Favorite';
+import TheatersIcon from '@material-ui/icons/Theaters';
 
 export const tags: string[] = [
   'Aventura',
@@ -58,6 +59,8 @@ export const getTagIcon = (tag: string): React.ReactElement | undefined => {
       return <AlarmOnIcon />;
     case 'Assistindo':
       return <AlarmIcon />;
+    case 'Filme':
+      return <TheatersIcon />;
     default:
       return undefined;
   }
