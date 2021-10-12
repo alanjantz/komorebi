@@ -19,7 +19,7 @@ export const pageQuery = graphql`
   query {
     allMarkdownRemark(
       limit: 2000
-      sort: { fields: [frontmatter___title], order: ASC }
+      sort: { fields: [fields___slug], order: ASC }
       filter: { frontmatter: { draft: { ne: true } } }
     ) {
       edges {

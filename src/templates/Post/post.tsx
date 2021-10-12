@@ -2,17 +2,21 @@ import React from 'react';
 import { PageProps, graphql } from 'gatsby';
 import IconButton from '@material-ui/core/IconButton';
 import HomeIcon from '@material-ui/icons/Home';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import { getBaseUrl } from '../../utils/urlUtils';
 import { Container, Layout, Post, SEO } from '../../components';
 import { PostModel, SeasonModel } from '../../models';
-import { Actions } from './styles';
+import { Actions, useStyles } from './styles';
 
 const PostTemplate: React.FC<PageProps> = (props) => {
-  const { data } = props;
+  const { data, pageContext } = props;
+  const { next, previous } = pageContext;
   const { slug } = data.markdownRemark.fields;
   const { title, subtitle, tags, seasons, description, poster, cover } =
     data.markdownRemark.frontmatter;
   const baseUrl = getBaseUrl();
+  const classes = useStyles();
 
   const post: PostModel = {
     title,
@@ -30,9 +34,29 @@ const PostTemplate: React.FC<PageProps> = (props) => {
       <Container>
         <Post post={post} postLink={slug} />
         <Actions>
+          {previous && (
+            <IconButton
+              color="inherit"
+              aria-label="menu"
+              href={previous.fields.slug}
+              className={classes.alignLeft}
+            >
+              <ArrowBackIcon />
+            </IconButton>
+          )}
           <IconButton color="inherit" aria-label="menu" href={`/${baseUrl}`}>
             <HomeIcon />
           </IconButton>
+          {next && (
+            <IconButton
+              color="inherit"
+              aria-label="menu"
+              href={next.fields.slug}
+              className={classes.alignRight}
+            >
+              <ArrowForwardIcon />
+            </IconButton>
+          )}
         </Actions>
       </Container>
     </Layout>
