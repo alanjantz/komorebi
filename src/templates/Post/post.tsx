@@ -6,6 +6,8 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import { getBaseUrl } from '../../utils/urlUtils';
 import { Container, Layout, Post, SEO } from '../../components';
+import ActionIconButton from './ActionIconButton';
+import { getCompletePostPath } from '../../services/PostServices';
 import { PostModel, SeasonModel } from '../../models';
 import { Actions, useStyles } from './styles';
 
@@ -35,27 +37,25 @@ const PostTemplate: React.FC<PageProps> = (props) => {
         <Post post={post} postLink={slug} />
         <Actions>
           {previous && (
-            <IconButton
-              color="inherit"
-              aria-label="menu"
-              href={previous.fields.slug}
+            <ActionIconButton
+              title={previous.frontmatter.title}
+              href={getCompletePostPath(baseUrl, previous.fields.slug)}
               className={classes.alignLeft}
             >
               <ArrowBackIcon />
-            </IconButton>
+            </ActionIconButton>
           )}
           <IconButton color="inherit" aria-label="menu" href={`/${baseUrl}`}>
             <HomeIcon />
           </IconButton>
           {next && (
-            <IconButton
-              color="inherit"
-              aria-label="menu"
-              href={next.fields.slug}
+            <ActionIconButton
+              title={next.frontmatter.title}
+              href={getCompletePostPath(baseUrl, next.fields.slug)}
               className={classes.alignRight}
             >
               <ArrowForwardIcon />
-            </IconButton>
+            </ActionIconButton>
           )}
         </Actions>
       </Container>
