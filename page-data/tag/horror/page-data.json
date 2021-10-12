@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tag-tag-tsx",
+    "path": "/tag/horror/",
+    "result": {"data":{"allMarkdownRemark":{"edges":[{"node":{"fields":{"slug":"/pupa/"},"frontmatter":{"title":"Pupa","poster":"http://i.imgur.com/Hdl7or7.png"}}}]}},"pageContext":{"tag":"Horror"}},
+    "staticQueryHashes": []}

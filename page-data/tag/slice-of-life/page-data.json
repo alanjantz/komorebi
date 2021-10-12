@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tag-tag-tsx",
+    "path": "/tag/slice-of-life/",
+    "result": {"data":{"allMarkdownRemark":{"edges":[{"node":{"fields":{"slug":"/ano-hana/"},"frontmatter":{"title":"Ano Hi Mita Hana no Namae wo Bokutachi wa Mada Shiranai","poster":"http://i.imgur.com/DmgTjtc.png"}}},{"node":{"fields":{"slug":"/mob-psycho-100/"},"frontmatter":{"title":"Mob Psycho 100","poster":"http://i.imgur.com/2Cbug1a.png"}}},{"node":{"fields":{"slug":"/shigatsu-wa-kimi-no-uso/"},"frontmatter":{"title":"Shigatsu wa Kimi no Uso","poster":"http://i.imgur.com/qnnvSCV.png"}}}]}},"pageContext":{"tag":"Slice of Life"}},
+    "staticQueryHashes": []}

@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tag-tag-tsx",
+    "path": "/tag/sci-fi/",
+    "result": {"data":{"allMarkdownRemark":{"edges":[{"node":{"fields":{"slug":"/gatchaman-crowds/"},"frontmatter":{"title":"Gatchaman Crowds","poster":"http://i.imgur.com/h5hjv4l.png"}}},{"node":{"fields":{"slug":"/guilty-crown/"},"frontmatter":{"title":"Guilty Crown","poster":"http://i.imgur.com/d7tkEaI.png"}}},{"node":{"fields":{"slug":"/kiznaiver/"},"frontmatter":{"title":"Kiznaiver","poster":"http://i.imgur.com/dxtt3q5.png"}}},{"node":{"fields":{"slug":"/no-6/"},"frontmatter":{"title":"No.6","poster":"http://i.imgur.com/vZcJFok.png"}}},{"node":{"fields":{"slug":"/paprika/"},"frontmatter":{"title":"Paprika","poster":"http://i.imgur.com/pjieHoL.png"}}},{"node":{"fields":{"slug":"/steins-gate/"},"frontmatter":{"title":"Steins;Gate","poster":"http://i.imgur.com/I9YkNq1.png"}}},{"node":{"fields":{"slug":"/c-money-of-soul-and-possibility-control/"},"frontmatter":{"title":"[C]: The Money of Soul and Possibility Control","poster":"http://i.imgur.com/ezvol1c.png"}}}]}},"pageContext":{"tag":"Sci-Fi"}},
+    "staticQueryHashes": []}

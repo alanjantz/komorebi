@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tag-tag-tsx",
+    "path": "/tag/filme/",
+    "result": {"data":{"allMarkdownRemark":{"edges":[{"node":{"fields":{"slug":"/kimi-no-na-wa/"},"frontmatter":{"title":"Kimi no Na wa","poster":"http://i.imgur.com/dDVEKQp.png"}}},{"node":{"fields":{"slug":"/paprika/"},"frontmatter":{"title":"Paprika","poster":"http://i.imgur.com/pjieHoL.png"}}}]}},"pageContext":{"tag":"Filme"}},
+    "staticQueryHashes": []}

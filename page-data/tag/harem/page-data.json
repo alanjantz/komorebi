@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tag-tag-tsx",
+    "path": "/tag/harem/",
+    "result": {"data":{"allMarkdownRemark":{"edges":[{"node":{"fields":{"slug":"/absolute-duo/"},"frontmatter":{"title":"Absolute Duo","poster":"http://i.imgur.com/OA7x4oY.png"}}}]}},"pageContext":{"tag":"Harem"}},
+    "staticQueryHashes": []}

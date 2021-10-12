@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tag-tag-tsx",
+    "path": "/tag/romance/",
+    "result": {"data":{"allMarkdownRemark":{"edges":[{"node":{"fields":{"slug":"/absolute-duo/"},"frontmatter":{"title":"Absolute Duo","poster":"http://i.imgur.com/OA7x4oY.png"}}},{"node":{"fields":{"slug":"/hitsugi-no-chaika/"},"frontmatter":{"title":"Hitsugi no Chaika","poster":"http://i.imgur.com/PN04CbK.png"}}},{"node":{"fields":{"slug":"/kimi-no-na-wa/"},"frontmatter":{"title":"Kimi no Na wa","poster":"http://i.imgur.com/dDVEKQp.png"}}},{"node":{"fields":{"slug":"/toradora/"},"frontmatter":{"title":"Toradora","poster":"http://i.imgur.com/8j76CjX.png"}}}]}},"pageContext":{"tag":"Romance"}},
+    "staticQueryHashes": []}

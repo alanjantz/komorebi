@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tag-tag-tsx",
+    "path": "/tag/seinen/",
+    "result": {"data":{"allMarkdownRemark":{"edges":[{"node":{"fields":{"slug":"/black-lagoon/"},"frontmatter":{"title":"Black Lagoon","poster":"http://i.imgur.com/b2RbHiY.png"}}},{"node":{"fields":{"slug":"/seiken-no-blacksmith/"},"frontmatter":{"title":"Seiken no Blacksmith","poster":"http://i.imgur.com/WYJrY1E.png"}}},{"node":{"fields":{"slug":"/witch-craft-works/"},"frontmatter":{"title":"Witch Craft Works","poster":"http://i.imgur.com/wBRsNmv.png"}}}]}},"pageContext":{"tag":"Seinen"}},
+    "staticQueryHashes": []}

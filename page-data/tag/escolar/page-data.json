@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tag-tag-tsx",
+    "path": "/tag/escolar/",
+    "result": {"data":{"allMarkdownRemark":{"edges":[{"node":{"fields":{"slug":"/absolute-duo/"},"frontmatter":{"title":"Absolute Duo","poster":"http://i.imgur.com/OA7x4oY.png"}}},{"node":{"fields":{"slug":"/kimi-no-na-wa/"},"frontmatter":{"title":"Kimi no Na wa","poster":"http://i.imgur.com/dDVEKQp.png"}}},{"node":{"fields":{"slug":"/seitokai-yakuindomo/"},"frontmatter":{"title":"Seitokai Yakuindomo","poster":"http://i.imgur.com/qVFls6T.png"}}},{"node":{"fields":{"slug":"/shigatsu-wa-kimi-no-uso/"},"frontmatter":{"title":"Shigatsu wa Kimi no Uso","poster":"http://i.imgur.com/qnnvSCV.png"}}},{"node":{"fields":{"slug":"/shimoneta/"},"frontmatter":{"title":"Shimoneta to Iu Gainen ga Sonzai Shinai Taikutsu na Sekai","poster":"http://i.imgur.com/793O8Qb.png"}}},{"node":{"fields":{"slug":"/toradora/"},"frontmatter":{"title":"Toradora","poster":"http://i.imgur.com/8j76CjX.png"}}}]}},"pageContext":{"tag":"Escolar"}},
+    "staticQueryHashes": []}

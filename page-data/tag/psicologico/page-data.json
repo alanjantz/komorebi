@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tag-tag-tsx",
+    "path": "/tag/psicologico/",
+    "result": {"data":{"allMarkdownRemark":{"edges":[{"node":{"fields":{"slug":"/paprika/"},"frontmatter":{"title":"Paprika","poster":"http://i.imgur.com/pjieHoL.png"}}},{"node":{"fields":{"slug":"/pupa/"},"frontmatter":{"title":"Pupa","poster":"http://i.imgur.com/Hdl7or7.png"}}},{"node":{"fields":{"slug":"/zankyou-no-terror/"},"frontmatter":{"title":"Zankyou no Terror","poster":"http://i.imgur.com/sSNzOMo.png"}}}]}},"pageContext":{"tag":"Psicológico"}},
+    "staticQueryHashes": []}

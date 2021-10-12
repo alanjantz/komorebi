@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tag-tag-tsx",
+    "path": "/tag/josei/",
+    "result": {"data":{"allMarkdownRemark":{"edges":[{"node":{"fields":{"slug":"/no-6/"},"frontmatter":{"title":"No.6","poster":"http://i.imgur.com/vZcJFok.png"}}},{"node":{"fields":{"slug":"/tokyo-magnitude-8/"},"frontmatter":{"title":"Tokyo Magnitude 8.0","poster":"http://i.imgur.com/RmMRgrQ.png"}}}]}},"pageContext":{"tag":"Josei"}},
+    "staticQueryHashes": []}

@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tag-tag-tsx",
+    "path": "/tag/pos-apocaliptico/",
+    "result": {"data":{"allMarkdownRemark":{"edges":[{"node":{"fields":{"slug":"/no-6/"},"frontmatter":{"title":"No.6","poster":"http://i.imgur.com/vZcJFok.png"}}}]}},"pageContext":{"tag":"Pós-Apocalíptico"}},
+    "staticQueryHashes": []}

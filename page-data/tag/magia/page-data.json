@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tag-tag-tsx",
+    "path": "/tag/magia/",
+    "result": {"data":{"allMarkdownRemark":{"edges":[{"node":{"fields":{"slug":"/guilty-crown/"},"frontmatter":{"title":"Guilty Crown","poster":"http://i.imgur.com/d7tkEaI.png"}}},{"node":{"fields":{"slug":"/witch-craft-works/"},"frontmatter":{"title":"Witch Craft Works","poster":"http://i.imgur.com/wBRsNmv.png"}}}]}},"pageContext":{"tag":"Magia"}},
+    "staticQueryHashes": []}

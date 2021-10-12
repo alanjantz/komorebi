@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tag-tag-tsx",
+    "path": "/tag/boys-love/",
+    "result": {"data":{"allMarkdownRemark":{"edges":[{"node":{"fields":{"slug":"/no-6/"},"frontmatter":{"title":"No.6","poster":"http://i.imgur.com/vZcJFok.png"}}},{"node":{"fields":{"slug":"/yuri-on-ice/"},"frontmatter":{"title":"Yuri!!! on ICE","poster":"https://i.imgur.com/P6XfkOB.png"}}}]}},"pageContext":{"tag":"Boys Love"}},
+    "staticQueryHashes": []}

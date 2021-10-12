@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tag-tag-tsx",
+    "path": "/tag/historico/",
+    "result": {"data":{"allMarkdownRemark":{"edges":[{"node":{"fields":{"slug":"/91-days/"},"frontmatter":{"title":"91 Days","poster":"http://i.imgur.com/yJaRvRs.png"}}}]}},"pageContext":{"tag":"Histórico"}},
+    "staticQueryHashes": []}

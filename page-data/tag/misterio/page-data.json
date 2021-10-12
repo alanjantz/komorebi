@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tag-tag-tsx",
+    "path": "/tag/misterio/",
+    "result": {"data":{"allMarkdownRemark":{"edges":[{"node":{"fields":{"slug":"/kujira-no-kora/"},"frontmatter":{"title":"Kujira no Kora","poster":"http://i.imgur.com/Toq4zcD.png"}}},{"node":{"fields":{"slug":"/paprika/"},"frontmatter":{"title":"Paprika","poster":"http://i.imgur.com/pjieHoL.png"}}}]}},"pageContext":{"tag":"Mistério"}},
+    "staticQueryHashes": []}

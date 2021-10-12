@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tag-tag-tsx",
+    "path": "/tag/esporte/",
+    "result": {"data":{"allMarkdownRemark":{"edges":[{"node":{"fields":{"slug":"/yuri-on-ice/"},"frontmatter":{"title":"Yuri!!! on ICE","poster":"https://i.imgur.com/P6XfkOB.png"}}}]}},"pageContext":{"tag":"Esporte"}},
+    "staticQueryHashes": []}

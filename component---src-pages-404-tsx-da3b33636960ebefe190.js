@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkkomorebi=self.webpackChunkkomorebi||[]).push([[218],{938:function(e,n,t){t.r(n);var r=t(7294),l=t(6019);n.default=function(){return r.createElement(l.Ar,null,r.createElement(l.HJ,{title:"Página não encontrada"}),r.createElement(l.bC,null))}}}]);
+//# sourceMappingURL=component---src-pages-404-tsx-da3b33636960ebefe190.js.map

@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tag-tag-tsx",
+    "path": "/tag/ecchi/",
+    "result": {"data":{"allMarkdownRemark":{"edges":[{"node":{"fields":{"slug":"/absolute-duo/"},"frontmatter":{"title":"Absolute Duo","poster":"http://i.imgur.com/OA7x4oY.png"}}},{"node":{"fields":{"slug":"/shimoneta/"},"frontmatter":{"title":"Shimoneta to Iu Gainen ga Sonzai Shinai Taikutsu na Sekai","poster":"http://i.imgur.com/793O8Qb.png"}}}]}},"pageContext":{"tag":"Ecchi"}},
+    "staticQueryHashes": []}

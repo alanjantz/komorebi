@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tag-tag-tsx",
+    "path": "/tag/sobrenatural/",
+    "result": {"data":{"allMarkdownRemark":{"edges":[{"node":{"fields":{"slug":"/ao-no-exorcist/"},"frontmatter":{"title":"Ao no Exorcist","poster":"http://i.imgur.com/j4udnfG.png"}}},{"node":{"fields":{"slug":"/kimi-no-na-wa/"},"frontmatter":{"title":"Kimi no Na wa","poster":"http://i.imgur.com/dDVEKQp.png"}}},{"node":{"fields":{"slug":"/mob-psycho-100/"},"frontmatter":{"title":"Mob Psycho 100","poster":"http://i.imgur.com/2Cbug1a.png"}}},{"node":{"fields":{"slug":"/sankarea/"},"frontmatter":{"title":"Sankarea","poster":"http://i.imgur.com/xlMDXRj.png"}}},{"node":{"fields":{"slug":"/witch-craft-works/"},"frontmatter":{"title":"Witch Craft Works","poster":"http://i.imgur.com/wBRsNmv.png"}}}]}},"pageContext":{"tag":"Sobrenatural"}},
+    "staticQueryHashes": []}
