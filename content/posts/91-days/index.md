@@ -13,7 +13,7 @@ seasons: "[
   {
     \"year\": 2016,
     \"title\": \"1ª Temporada\",
-    \"episodesWatched\": 2,
+    \"watchedEpisodes\": 2,
     \"episodes\": [
       \"A Noite Do Homicídio\",
       \"O Fantasma Da Dissimulação\",

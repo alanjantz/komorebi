@@ -12,5 +12,5 @@ export interface SeasonModel {
   year: number;
   title: string;
   episodes?: string[] | number;
-  episodesWatched?: number[] | number;
+  watchedEpisodes?: number[] | number;
 }

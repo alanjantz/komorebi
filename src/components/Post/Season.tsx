@@ -16,7 +16,7 @@ interface SeasonProps {
 }
 
 const Season: React.FC<SeasonProps> = ({ season, watched }) => {
-  const { title, year, episodesWatched } = season;
+  const { title, year, watchedEpisodes } = season;
   const classes = useStyles();
 
   const formatNumber = (value: number, padding: number): string =>
@@ -71,11 +71,11 @@ const Season: React.FC<SeasonProps> = ({ season, watched }) => {
   };
 
   const checkEpisodeWatched = (index: number): boolean => {
-    if (episodesWatched) {
-      if (typeof episodesWatched === 'number') {
-        return (episodesWatched as number) >= index;
+    if (watchedEpisodes) {
+      if (typeof watchedEpisodes === 'number') {
+        return (watchedEpisodes as number) >= index;
       }
-      return (episodesWatched as Array<number>).includes(index);
+      return (watchedEpisodes as Array<number>).includes(index);
     }
 
     return false;

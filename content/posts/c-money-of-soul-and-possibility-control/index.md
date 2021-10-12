@@ -14,7 +14,7 @@ seasons: "[
   {
     \"year\": 2010,
     \"title\": \"1ª Temporada\",
-    \"episodesWatched\": 1,
+    \"watchedEpisodes\": 1,
     \"episodes\": [
       \"Complicação\",
       \"Coincidência\",
